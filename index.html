@@ -32,10 +32,168 @@
       top: 0;
       left: 0;
     }
+    
+    .feature {
+      width:100%;
+      background:#ffffff;
+    }
+    .feature.grey {
+      background:#EBEBEB;
+    }
+    .feature .content {
+      width:1140px;
+      margin:0 auto;
+      position: relative;
+    }
+    .feature .img-group {
+      width:580px;
+      height:455px;
+      position: relative;
+      float: right;
+    }
+    .feature .img-group.left {
+      float:left;
+    }
+    .feature .slogan {
+      width:560px;
+      margin: 0;
+      padding: 200px 0px;
+      display: inline-block;
+    }
+    .feature .slogan.right {
+      width:560px;
+      float: right;
+      text-align: right;
+      margin: 0;
+      padding: 200px 0px;
+      display: inline-block;
+    }
+    .feature .slogan h1, .feature .slogan h2{
+      margin: 0;
+      padding: 0;
+      color: #707070;
+    }
+    .feature .slogan h1{
+      font-size: 35px;
+      line-height: 38px;
+    }
+    .feature .slogan h2{
+      font-size: 16px;
+    }
+    .feature-img {
+      position: absolute;
+    }
+    #feature1-html5 {
+      right:10px;
+      top:50px;
+    }
+    #feature1-css3 {
+      right:430px;
+      top:220px;
+    }
+    #feature1-android {
+      right:330px;
+      bottom:100px;
+    }
+    #feature1-iphone {
+      right:220px;
+      bottom:100px;
+    }
+    #feature1-winphone {
+      right:100px;
+      bottom:100px;
+    }
+    #feature2-iphone {
+      top:85px;
+      left:130px;
+    }
+    #feature2-icons {
+      top:40px;
+      left:0;
+    }
+    #feature3-colorwheel {
+      top:40px;
+      right:0;
+      width:380px;
+    }
+    #feature3-less {
+      width:120px;
+      top:205px;
+      right:130px;
+    }
     @media (max-width: 768px) {
       .logo-container {
         width:200px;
         height:200px;
+      }
+      .feature .content {
+        width:100%;
+        text-align: center;
+      }
+      .feature .slogan, .feature .slogan.right {
+        width:100%;
+        text-align: center;
+        float:none;
+        display: block;
+        padding:10px 0;
+      }
+      .feature .slogan h1{
+        font-size: 24px;
+      }
+      .feature .slogan h2{
+        font-size: 12px;
+      }
+      .feature .img-group, .feature .img-group.left {
+        width:300px;
+        margin: 0 auto;
+        display: block;
+        float: none;
+        height:340px;
+      }
+      #feature1-html5 {
+        width:70px;
+        right:0px;
+        top:20px;
+      }
+      #feature1-css3 {
+        width:70px;
+        right:230px;
+        top:220px;
+      }
+      #feature1-android {
+        width:100px;
+        right:150px;
+        bottom:50px;
+      }
+      #feature1-iphone {
+        width:100px;
+        right:80px;
+        bottom:50px;
+      }
+      #feature1-winphone {
+        width:100px;
+        right:20px;
+        bottom:50px;
+      }
+      #feature2-iphone {
+        width:100px;
+        top:85px;
+        left:100px;
+      }
+      #feature2-icons {
+        width:200px;
+        top:40px;
+        left:50px;
+      }
+      #feature3-colorwheel {
+        top:40px;
+        right:25px;
+        width:250px;
+      }
+      #feature3-less {
+        width:90px;
+        top:145px;
+        right:105px;
       }
     }
   </style>
@@ -182,6 +340,45 @@
       <p class="version">当前版本: v1.0.0&nbsp; | &nbsp;文档更新于: 2016-04-29</p>
     </div>
   </main>
+  <main class="feature grey" id="feature1">
+    <div class="content">
+      <div class="slogan">
+        <h1>专为移动设备设计的模版框架</h1>
+        <h2>A Mobile First HTMl5 and CSS3 UI Framework</h2>
+      </div>
+      <div class="img-group">
+        <img class="feature-img" src ="images/index/phone-winphone.png" id="feature1-winphone">
+        <img class="feature-img" src ="images/index/phone-iphone.png" id="feature1-iphone">
+        <img class="feature-img" src ="images/index/phone-android.png" id="feature1-android">
+        <img class="feature-img" src ="images/index/logo-css3.png" id="feature1-css3">
+        <img class="feature-img" src ="images/index/logo-html5.png" id="feature1-html5">
+      </div>
+    </div>
+  </main>
+  <main class="feature clearfix" id="feature2">
+    <div class="content">
+      <div class="slogan right">
+        <h1>海量组件，页面模版，轻松拼成应用</h1>
+        <h2>Massive Components and Page Templates for Easy App Building</h2>
+      </div>
+      <div class="img-group left">
+        <img class="feature-img" src ="images/index/phone-iphone2.png" id="feature2-iphone">
+        <img class="feature-img" src ="images/index/icons.png" id="feature2-icons">
+      </div>
+    </div>
+  </main> 
+  <main class="feature grey" id="feature3">
+    <div class="content">
+      <div class="slogan">
+        <h1>通过LESS换肤，轻松，便捷</h1>
+        <h2>Changing Themes Using LESS is a Breeze</h2>
+      </div>
+      <div class="img-group">
+        <img class="feature-img" src ="images/index/colorwheel.png" id="feature3-colorwheel">
+        <img class="feature-img" src ="images/index/logo-less.png" id="feature3-less">
+      </div>
+    </div>
+  </main>
   <main class="bs-masthead">
     <div class="container">
       <!-- Template
@@ -189,14 +386,14 @@
       <h1>案例</h1>
       <p class="lead" style="margin:20px 0 40px 0">以下实例全部基于 SeedsUI 的众多组件开发而成，使用Exmobi的多页模式，如果是纯h5应用，则需要修改跳转方式。</p>
 
-      <div class="row bs-examples">
-        <div class="col-xs-6 col-md-4">
+      <div class="row bs-examples" id="examples">
+        <div class="col-xs-6 col-md-4" id="example1">
           <a class="thumbnail">
             <img src="images/sign.jpg" alt=""></a>
           <h4>签到</h4>
           <p>签到app</p>
         </div>
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4" id="example2">
           <a class="thumbnail">
             <img src="images/poll.jpg" alt=""></a>
           <h4>投票</h4>
@@ -204,13 +401,13 @@
         </div>
         <div class="clearfix visible-xs"></div>
 
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4" id="example3">
           <a class="thumbnail">
             <img src="images/news.jpg" alt=""></a>
           <h4>新闻</h4>
           <p>新闻app</p>
         </div>
-        <div class="col-xs-6 col-md-4">
+        <div class="col-xs-6 col-md-4" id="example4">
           <a class="thumbnail">
             <img src="images/doctor.jpg" alt=""></a>
           <h4>医生</h4>
@@ -231,7 +428,10 @@
   <script src="javascripts/highlight.min.js"></script>
   <script >hljs.initHighlightingOnLoad();</script>
   <script src="javascripts/application.js"></script>
-
+  <script src="javascripts/ScrollMagic.min.js"></script>
+  <script src="javascripts/TweenMax.min.js"></script>
+  <script src="javascripts/TimelineMax.min.js"></script>
+  <script src="javascripts/animation.gsap.js"></script>
 <script src="javascripts/segment.min.js"></script>
 <script type="text/javascript">
     function previewMobilePage(url){
@@ -285,6 +485,41 @@
     window.addEventListener("load",function(){
       drawLogo();
     });
+    var controller = new ScrollMagic.Controller();
+    var tween = new TimelineMax()
+          .from("#feature1-android", 0.5, {opacity: 0, bottom:200})
+          .from("#feature1-iphone", 0.5, {opacity: 0, bottom:200})
+          .from("#feature1-winphone", 0.5, {opacity: 0, bottom:200})
+          .from("#feature1-css3", 0.3, {opacity: 0, scale:0.1})
+          .from("#feature1-html5", 0.3, {opacity: 0, scale:0.1});
+    var scene = new ScrollMagic.Scene({triggerElement: "#feature1"})
+          .setTween(tween)
+          .addTo(controller);
+        scene.reverse(false);
+    var tween = new TimelineMax()
+          .from("#feature2-iphone", 0.5, {opacity: 0, top:1000})
+          .from("#feature2-icons", 0.5, {opacity: 0, scale:0.1});
+    var scene = new ScrollMagic.Scene({triggerElement: "#feature2"})
+          .setTween(tween)
+          .addTo(controller);
+        scene.reverse(false);
+    var tween = new TimelineMax()
+        .from("#feature3-colorwheel", 0.5, {opacity: 0, scale:0.1})
+        .from("#feature3-less", 0.5, {opacity: 0, scale:0.1});
+    var scene = new ScrollMagic.Scene({triggerElement: "#feature3"})
+          .setTween(tween)
+          .addTo(controller);
+        scene.reverse(false);
+    var tween = new TimelineMax()
+        .from("#example1", 0.3, {opacity: 0, scale:0.1})
+        .from("#example2", 0.3, {opacity: 0, scale:0.1})
+        .from("#example3", 0.3, {opacity: 0, scale:0.1})
+        .from("#example4", 0.3, {opacity: 0, scale:0.1});
+    var scene = new ScrollMagic.Scene({triggerElement: "#examples"})
+          .setTween(tween)
+          .addTo(controller);
+        scene.reverse(false);
+
 </script>
 
 </body>
