@@ -14,8 +14,7 @@
 	}
 	</style>
 </head>
-<body>
-	<section id="page_index" class="active">
+<body ontouchstart="">
 		<header>
 	        <div class="titlebar">
 	            <a href="javascript:back()">
@@ -207,23 +206,19 @@
 				</li>
 			</ul>
 		</article>
-	</section>
 	
-	<script src="../plugin/seedsui/seedsui.min.js"></script>
-	<script src="../plugin/exmobi/exmobi.js"></script>
+	<script src="../plugin/jquery/jquery.min.js"></script>
+    <script src="../plugin/seedsui/seedsui.min.js"></script>
+    <!--Exmobi能力-->
+    <script src="../plugin/exmobi/exmobi.js"></script>
+    
 	<script>
 		//判断是否是exmobi环境
 		document.addEventListener("plusready",function(){
 			document.getElementById("exmobilocal").style.display="block";
 		},false);
-		//remove原返回事件绑定
-		document.removeEventListener("backmonitor",back,false);
-		//添加新的返回事件
-		document.addEventListener("backmonitor",function(){
-			Exmobi.dbclose();
-		},false);
 		//定义exmobi返回
-		function back(){history.go(-1);}
+		function back(){Exmobi.dbclose();}
 	</script>
 </body>
 </html>

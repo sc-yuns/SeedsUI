@@ -13,8 +13,7 @@
 	}
 	</style>
 </head>
-<body>
-	<section id="page_index" class="active">
+<body ontouchstart="">
 		<header>
 			<div class="titlebar">
 				<a href="javascript:back()"> <i class="icon icon-arrowleft"></i>
@@ -37,12 +36,12 @@
 					</a>
 					<label class="grid-label">动画</label>
 				</li>
-				<li>
+				<!-- <li>
 					<a href="aside.html">
 						<img src="thumbnail/aside.png"/>
 					</a>
 					<label class="grid-label">侧边栏</label>
-				</li>
+				</li> -->
 				<li>
 					<a href="bar.html">
 						<img src="thumbnail/bar.png"/>
@@ -125,6 +124,12 @@
 					</a>
 					<label class="grid-label">表单验证</label>
 				</li>
+				<!-- <li>
+					<a href="scrollpicker.html">
+						<img src="thumbnail/scrollpicker.png"/>
+					</a>
+					<label class="grid-label">滚动选择器</label>
+				</li> -->
 			</ul>
 
 			<div class="sliver">栅格</div>
@@ -146,6 +151,12 @@
 						<img src="thumbnail/list.png"/>
 					</a>
 					<label class="grid-label">列表</label>
+				</li>
+				<li>
+					<a href="indexbar.html">
+						<img src="thumbnail/indexbar.png"/>
+					</a>
+					<label class="grid-label">索引栏</label>
 				</li>
 			</ul>
 
@@ -414,13 +425,10 @@
 			</ul>
 
 		</article>
-	</section>
 	<script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
     <!--Exmobi能力-->
     <script src="../plugin/exmobi/exmobi.js"></script>
-    <!--禁止ios弹性-->
-    <script src="../plugin/inobounce/inobounce.min.js"></script>
 	<script>
 		//manifest
 		/*window.addEventListener("updateready",function(e){
@@ -438,18 +446,12 @@
 		document.addEventListener("plusready",function(){
 			document.getElementById("exmobilocal").style.display="block";
 		},false);
-		//remove原返回事件绑定
-		document.removeEventListener("backmonitor",back,false);
-		//添加新的返回事件
-		document.addEventListener("backmonitor",function(){
-			Exmobi.dbclose();
-		},false);
 		//判断是否是微信环境
 		if(Device.isWeixin){
 			document.getElementById("weixinlocal").style.display="block";
 		}
 		//定义exmobi返回
-		function back(){history.go(-1);}
+		function back(){Exmobi.dbclose();}
 	</script>
 </body>
 </html>

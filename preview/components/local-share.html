@@ -7,8 +7,7 @@
 	<link rel="stylesheet" href="../plugin/seedsui/seedsui.min.css">
 </head>
 
-<body>
-	<section id="page_local_share" class="active">
+<body ontouchstart="">
 		<header>
 		    <div class="titlebar">
 		        <a href="javascript:back()">
@@ -24,7 +23,7 @@
 			<a class="button submit block margin8" href="javascript:showShare()">点击分享</a>
 		</article>
 		<!-- 分享到-->
-		<div id="mshare" class="hide sharebox">
+		<div id="mshare" class="hide sharebox" style="width:100%">
 			<ul class="grid size54" data-rowspace="8" data-col="3">
 				<li>
 					<a class="photo color-white" style="background-color:#e55f5f;" data-share="tsina">
@@ -65,13 +64,10 @@
 			</ul>
 			<a class="button cancel block" style="margin: 8px 20px;" id="msharecancel">取消</a>
 		</div>
-	</section>
 	<script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
     <!--Exmobi能力-->
     <script src="../plugin/exmobi/exmobi.js"></script>
-    <!--禁止ios弹性-->
-    <script src="../plugin/inobounce/inobounce.min.js"></script>
 	<script>
 		//分享参数
 		var shareData={
