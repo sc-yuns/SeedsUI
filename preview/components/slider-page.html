@@ -127,7 +127,8 @@
             });
 
             var drag2=new Dragrefresh(carouselPage.slides[1],{
-                "onRefresh":function(e){
+                "minScrollTop":1,
+                "onRefreshStart":function(e){
                     setTimeout(function(){
                         e.refreshComplete();
                     }, 2000);
