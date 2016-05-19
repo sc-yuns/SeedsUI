@@ -1884,7 +1884,7 @@
             <code>其它区域越大，文字区域就越小</code>
             ，具体示例：
             <code>bar.html</code>
-            页面。
+            页面。|
           </p>
           <table class="table table-bordered">
             <thead>
@@ -1897,28 +1897,44 @@
             </thead>
             <tbody>
               <tr>
-                <td>I.导航盒子div</td>
-                <td>class</td>
-                <td>.titlebar | .reverse</td>
-                <td>导航盒子 | 盒子的颜色反转</td>
+                <td rowspan="2">I.导航盒子div</td>
+                <td rowspan="2">class</td>
+                <td>.titlebar</td>
+                <td>导航盒子</td>
               </tr>
               <tr>
-                <td>II.文字区域h1</td>
-                <td>class</td>
-                <td>无 | .text-center</td>
-                <td>自动被左侧元素挤压 | 文字水平居中</td>
+                <td>.reverse</td>
+                <td>盒子的颜色反转</td>
               </tr>
               <tr>
-                <td>II.左侧元素a或button</td>
-                <td>class</td>
-                <td>无 |.left</td>
-                <td>占用左侧区域 | 绝对定位于左侧，不占用区域</td>
+                <td rowspan="2">II.文字区域h1</td>
+                <td rowspan="2">class</td>
+                <td>无</td>
+                <td>自动被左侧元素挤压</td>
               </tr>
               <tr>
-                <td>II.右侧元素a或button</td>
-                <td>class</td>
-                <td>无 |.right</td>
-                <td>占用右侧区域 | 绝对定位于右侧，不占用区域</td>
+                <td>.text-center</td>
+                <td>文字水平居中</td>
+              </tr>
+              <tr>
+                <td rowspan="2">II.左侧元素a或button</td>
+                <td rowspan="2">class</td>
+                <td>无</td>
+                <td>绝对定位于左侧，不占用区域</td>
+              </tr>
+              <tr>
+                <td>.left</td>
+                <td>占用左侧区域</td>
+              </tr>
+              <tr>
+                <td rowspan="2">II.右侧元素a或button</td>
+                <td rowspan="2">class</td>
+                <td>无
+                <td>占用右侧区域</td>
+              </tr>
+              <tr>
+                <td>.right</td>
+                <td>绝对定位于右侧，不占用区域</td>
               </tr>
             </tbody>
           </table>
@@ -2007,10 +2023,22 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2">I.页签盒子ul</td>
-                <td>class</td>
-                <td>slidebar | rectbar | arrowbar | menubar</td>
-                <td>滑片型 | 区块型 | 箭头型 | 菜单型</td>
+                <td rowspan="5">I.页签盒子ul</td>
+                <td rowspan="4">class</td>
+                <td>slidebar</td>
+                <td>滑片型</td>
+              </tr>
+              <tr>
+                <td>rectbar</td>
+                <td>区块型</td>
+              </tr>
+              <tr>
+                <td>arrowbar</td>
+                <td>箭头型</td>
+              </tr>
+              <tr>
+                <td>menubar</td>
+                <td>菜单型</td>                
               </tr>
               <tr>
                 <td>data-col</td>
@@ -2018,10 +2046,14 @@
                 <td>定义一行的显示的列数，并且强制等宽</td>
               </tr>
               <tr>
-                <td>II.页签li</td>
-                <td>class</td>
-                <td>tab | active</td>
-                <td>页签 | 激活状态</td>
+                <td rowspan="2">II.页签li</td>
+                <td rowspan="2">class</td>
+                <td>tab</td>
+                <td>页签</td>
+              </tr>
+              <tr>
+                <td>active</td>
+                <td>激活状态</td>
               </tr>
             </tbody>
           </table>
@@ -2070,12 +2102,30 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2">I.页签盒子ul</td>
-                <td>class</td>
-                <td>
-                  tabbar | animate-slide | animate-bracket | animate-box | animate-oneline | animate-twoline
-                </td>
-                <td>动画页签 | 滑片型 | 下框型 | 整框型 | 下线型 | 双线型</td>
+                <td rowspan="7">I.页签盒子ul</td>
+                <td rowspan="6">class</td>
+                <td>tabbar</td>
+                <td>动画页签</td>
+              </tr>
+              <tr>
+                <td>animate-slide</td>
+                <td>滑片型</td>
+              </tr>
+              <tr>
+                <td>animate-bracket</td>
+                <td>下框型</td>
+              </tr>
+              <tr>
+                <td>animate-box</td>
+                <td>整框型</td>
+              </tr>
+              <tr>
+                <td>animate-oneline</td>
+                <td>下线型</td>
+              </tr>
+              <tr>
+                <td>animate-twoline</td>
+                <td>双线型</td>
               </tr>
               <tr>
                 <td>data-col</td>
@@ -2083,10 +2133,14 @@
                 <td>定义一行的显示的列数，并且强制等宽</td>
               </tr>
               <tr>
-                <td>II.页签li</td>
-                <td>class</td>
-                <td>tab | active</td>
-                <td>页签 | 激活状态</td>
+                <td rowspan="2">II.页签li</td>
+                <td rowspan="2">class</td>
+                <td>tab</td>
+                <td>页签</td>
+              </tr>
+              <tr>
+                <td>active</td>
+                <td>激活状态</td>
               </tr>
             </tbody>
           </table>
@@ -2123,15 +2177,47 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2">I.按钮button,input[type=button],a</td>
-                <td>class</td>
-                <td>
-                  button | outline | submit | cancel | disable | info | success | warn | grayscale | white
-                </td>
-                <td>
-                  主样式 | 边框型 | 提交按钮 | 取消按钮 | 禁用按钮 | 信息按钮 | 成功按钮 | 警告按钮 | 无色按钮 | 白色按钮
-                </td>
+                <td rowspan="10">I.按钮button,input[type=button],a</td>
+                <td rowspan="10">class</td>
+                <td>button</td>
+                <td>主样式</td>
               </tr>
+              <tr>
+                <td>outline</td>
+                <td>边框型</td>
+              </tr>
+              <tr>
+                <td>submit</td>
+                <td>提交按钮</td>
+              </tr>
+              <tr>
+                <td>cancel</td>
+                <td>取消按钮</td>
+              </tr>
+              <tr>
+                <td>disable</td>
+                <td>禁用按钮</td>
+              </tr>
+              <tr>
+                <td>info</td>
+                <td>信息按钮</td>
+              </tr>
+              <tr>
+                <td>success</td>
+                <td>成功按钮</td>
+              </tr>
+              <tr>
+                <td>warn</td>
+                <td>警告按钮</td>
+              </tr>
+              <tr>
+                <td>grayscale</td>
+                <td>无色按钮</td>
+              </tr>
+              <tr>
+                <td>white</td>
+                <td>白色按钮</td>
+              </tr> 
             </tbody>
           </table>
 
@@ -2170,10 +2256,18 @@
                 <td>按钮组包裹span</td>
               </tr>
               <tr>
-                <td>II.按钮span</td>
-                <td>class</td>
-                <td>无 | disable | active</td>
-                <td>普通按钮 | 禁用状态 | 激活状态</td>
+                <td rowspan="3">II.按钮span</td>
+                <td rowspan="3">class</td>
+                <td>无</td>
+                <td>普通按钮</td>
+              </tr>
+              <tr>
+                <td>disable</td>
+                <td>禁用状态</td>
+              </tr>
+              <tr>
+                <td>active</td>
+                <td>激活状态</td>
               </tr>
             </tbody>
           </table>
@@ -2210,10 +2304,30 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="2">section标签</td>
-                <td>data-sectionanimation</td>
-                <td>none | slideleft | slideright | slideup | slidedown | fade</td>
-                <td>无动画 | 左右 | 右左 | 上下 | 下上 | 淡入淡出</td>
+                <td rowspan="7">section标签</td>
+                <td rowspan="6">data-sectionanimation</td>
+                <td>none</td>
+                <td>无动画</td>
+              </tr>
+              <tr>
+                <td>slideleft</td>
+                <td>左右</td>
+              </tr>
+              <tr>
+                <td>slideright</td>
+                <td>右左</td>
+              </tr>
+              <tr>
+                <td>slideup</td>
+                <td>上下</td>
+              </tr>
+              <tr>
+                <td>slidedown</td>
+                <td>下上</td>
+              </tr>
+              <tr>
+                <td>fade</td>
+                <td>淡入淡出</td>
               </tr>
               <tr>
                 <td>data-target</td>
@@ -2437,10 +2551,22 @@
                 <td>水柱</td>
               </tr>
               <tr>
-                <td>II.进度文字span</td>
-                <td>class</td>
-                <td>text | left | center | right</td>
-                <td>进度文字 | 左对齐 | 水平居中 | 右对齐</td>
+                <td rowspan="4">II.进度文字span</td>
+                <td rowspan="4">class</td>
+                <td>text</td>
+                <td>进度文字</td>
+              </tr>
+              <tr> 
+                <td>left</td>
+                <td>左对齐</td>
+              </tr>
+              <tr> 
+                <td>center</td>
+                <td>水平居中</td>
+              </tr>
+              <tr> 
+                <td>right</td>
+                <td>右对齐</td>
               </tr>
             </tbody>
           </table>
