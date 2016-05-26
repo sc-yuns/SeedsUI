@@ -1,3 +1,5 @@
+/*控件*/
+/*常用颜色*/
 /*-----------------------------global.less(start)-----------------------------*/
 .events-none {
   pointer-events: none;
@@ -427,11 +429,6 @@ body {
   -ms-transition: all 0.5s;
   transition: all 0.5s;
 }
-.body-scroller {
-  height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-}
 /*主体遮罩*/
 .section_container_mask {
   position: absolute;
@@ -442,6 +439,7 @@ body {
   overflow: hidden;
   display: none;
 }
+/*section*/
 section {
   display: none;
   position: absolute;
@@ -454,10 +452,6 @@ section {
 }
 section.active {
   display: block;
-}
-.scroller {
-  position: relative;
-  width: 100%;
 }
 /*header,footer*/
 header,
@@ -476,16 +470,15 @@ section > header,
 section > footer {
   position: absolute;
 }
-/*content*/
-body > header + article {
+/*article*/
+article {
+  box-sizing: border-box;
+}
+header + article {
   padding-top: 44px;
 }
 section > article {
-  position: absolute;
-  top: 44px;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  height: 100%;
   overflow: auto;
 }
 /*----------------mbox.less(end)--------------*/
@@ -2062,7 +2055,7 @@ ul.border-content li {
   float: right;
 }
 /*----------------card.less(end)--------------*/
-/* @import "../assets/less/aside.less"; */
+/* @import "aside.less"; */
 /*----------------------------title.less(start)----------------------------*/
 .sliver,
 .title {
@@ -4090,7 +4083,10 @@ input[type=range]::-webkit-slider-thumb {
 /*小汽泡*/
 .grid li .tip,
 .grid li .badge,
-.grid li .close {
+.grid li .close,
+.photo .tip,
+.photo .badge,
+.photo .close {
   position: absolute;
   top: -4px;
   right: -4px;
@@ -4332,7 +4328,6 @@ input[type=range]::-webkit-slider-thumb {
 .popup-mask {
   display: none;
   opacity: 0;
-  filter: alpha(opacity=0);
   position: fixed;
   z-index: 10;
   left: 0;
@@ -4823,24 +4818,23 @@ input[type=range]::-webkit-slider-thumb {
 }
 /*----------------richedit.less(end)--------------*/
 /*----------------scrollpicker.less(start)--------------*/
-#scrollpicker {
+.scrollpicker {
   position: fixed;
-  left: 0;
+  bottom: 0;
   width: 100%;
-  background-color: white;
-  text-align: left;
-  z-index: 1000;
+  z-index: 10;
+  -webkit-transition: all 500ms;
+  -webkit-transform: translate3d(0px, 100%, 0px);
 }
-#scrollpicker-header {
+.scrollpicker-header {
   position: relative;
   width: 100%;
   height: 43px;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: #f4f4f4;
+  border-style: solid;
+  border-width: 1px 0;
 }
-#scrollpicker-cancel,
-#scrollpicker-done {
+.scrollpicker-cancel,
+.scrollpicker-done {
   display: inline-block;
   position: absolute;
   top: 4px;
@@ -4848,79 +4842,57 @@ input[type=range]::-webkit-slider-thumb {
   line-height: 32px;
   padding: 0 5px;
 }
-#scrollpicker-cancel {
-  left: 7px;
-  float: left;
+.scrollpicker-cancel {
+  left: 8px;
 }
-#scrollpicker-done {
-  right: 7px;
-  float: right;
+.scrollpicker-done {
+  right: 8px;
 }
-.sw-pressed {
-  opacity: 0.4;
-}
-#scrollpicker-body {
-  position: relative;
-  z-index: 999;
+.scrollpicker-wrapper {
   display: block;
+  position: relative;
   height: 215px;
   overflow: hidden;
-  -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 0%, #ffffff 40%, #ffffff 60%, transparent 100%, transparent);
 }
-#scrollpicker-slots {
-  display: table;
+.scrollpicker-slots {
   width: 100%;
-  background: #fcfcfc;
+  display: table;
+  table-layout: fixed;
 }
-#scrollpicker-slots div {
+.scrollpicker-slot {
   display: table-cell;
-  height: 100%;
+  height: 215px;
+  overflow: hidden;
+}
+ul.scrollpicker-slot,
+.scrollpicker-slot ul {
   padding-top: 86px;
+  padding-bottom: 86px;
+  -webkit-transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
-#scrollpicker-slots div:first-child {
-  border: 0;
-}
-#scrollpicker-slots ul {
-  padding: 0 0 85px 0;
-  margin: 0;
-  list-style: none;
-}
-#scrollpicker-slots .shrink {
-  width: 1%;
-}
-#scrollpicker-slots .separator {
-  background-color: #f4f4f4;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-}
-#scrollpicker-slots li {
-  padding: 0 8px;
+.scrollpicker-slot li {
   height: 44px;
   line-height: 44px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
-  font-size: 20px;
-  color: #aaa;
+  padding: 0 8px;
+  font-size: 17px;
 }
-#scrollpicker-slots li.active {
-  color: #333;
-}
-#scrollpicker-touchlayer {
+.scrollpicker-layer {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 215px;
-  border-width: 16px;
-  z-index: 1000;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
-.scrollpicker-touchlayer-activebox {
+.scrollpicker-layer-frame {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
   height: 46px;
   width: 100%;
+  pointer-events: none;
+  -webkit-transform: translateY(-50%);
   border-width: 1px 0;
-  border-color: #ddd;
   border-style: solid;
 }
 /*----------------scrollpicker.less(end)--------------*/
@@ -5547,7 +5519,7 @@ input[type="button"] .icon,
 i,
 .icon {
   position: relative;
-  background-size: auto 200%;
+  background-size: 100% auto;
   background-position: center top;
 }
 .icon.active {
@@ -6321,8 +6293,6 @@ input[type="submit"].radiusround,
   border-width: 0 0 1px 0;
 }
 /*----------------layout.less(end)--------------*/
-/*控件*/
-/*常用颜色*/
 /*----------------global.less(start)--------------*/
 body {
   color: #333333;
@@ -6330,7 +6300,7 @@ body {
 }
 /*标签默认样式*/
 ::selection {
-  background: #36acf4;
+  background: #18b2ed;
   color: #ffffff;
 }
 ::-webkit-input-placeholder {
@@ -6390,17 +6360,17 @@ aside {
   color: #333333;
 }
 .titlebar a {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .titlebar a:active:not(.disable) {
-  color: rgba(54, 172, 244, 0.5);
+  color: rgba(24, 178, 237, 0.5);
 }
 .titlebar a.disable:not(.button) {
   opacity: 0.5;
 }
 .titlebar.reverse {
-  background-color: #36acf4;
-  border-color: #36acf4;
+  background-color: #18b2ed;
+  border-color: #18b2ed;
 }
 .titlebar.reverse h1 {
   color: #ffffff;
@@ -6422,7 +6392,7 @@ aside {
   background-color: transparent;
 }
 .titlebar.reverse > .searchbar .input-box {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 /*----------------titlebar.less(end)----------------*/
 /*----------------tabbar.less(start)--------------*/
@@ -6435,7 +6405,7 @@ aside {
 }
 .tab:active,
 .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .rectbar,
 .slidebar,
@@ -6444,19 +6414,19 @@ aside {
 }
 .slidebar .tab:active,
 .slidebar .tab.active {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 .menubar {
   color: #888888;
   background-color: #f8f8f8;
 }
 .menubar.reverse .tab {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 .arrowbar,
 .menubar.reverse {
   color: #ffffff;
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .arrowbar .tab,
 .menubar.reverse .tab {
@@ -6473,41 +6443,41 @@ aside {
   border-top-color: #ffffff;
 }
 .tabbar.animate-slide .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .tabbar.animate-slide hr {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 .tabbar.animate-twoline .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .tabbar.animate-twoline .tab::before,
 .tabbar.animate-twoline .tab::after {
-  background: #36acf4;
+  background: #18b2ed;
 }
 .tabbar.animate-oneline .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .tabbar.animate-oneline .tab::before {
-  background: #36acf4;
+  background: #18b2ed;
 }
 .tabbar.animate-box .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .tabbar.animate-box .tab::before,
 .tabbar.animate-box .tab::after,
 .tabbar.animate-box .tab-label::before,
 .tabbar.animate-box .tab-label::after {
-  background: #36acf4;
+  background: #18b2ed;
 }
 .tabbar.animate-bracket .tab.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .tabbar.animate-bracket .tab::before,
 .tabbar.animate-bracket .tab::after,
 .tabbar.animate-bracket .tab-label::before,
 .tabbar.animate-bracket .tab-label::after {
-  background: #36acf4;
+  background: #18b2ed;
 }
 /*----------------tabbar.less(end)--------------*/
 /*----------------badge.less(start)--------------*/
@@ -6525,31 +6495,31 @@ aside {
 }
 /*标题小标记*/
 .peg {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*小点点*/
 .dot {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*----------------badge.less(end)--------------*/
 /*----------------button.less(start)--------------*/
 /*按钮-普通按钮*/
 .button {
   color: #ffffff;
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .button.outline {
-  color: #36acf4;
-  border-color: #36acf4;
+  color: #18b2ed;
+  border-color: #18b2ed;
   background-color: transparent;
 }
 .button:not(.noclick):active {
   color: rgba(255, 255, 255, 0.5);
-  background-color: rgba(54, 172, 244, 0.5);
+  background-color: rgba(24, 178, 237, 0.5);
 }
 .button.outline:not(.noclick):active {
-  color: rgba(54, 172, 244, 0.5);
-  border-color: rgba(54, 172, 244, 0.5);
+  color: rgba(24, 178, 237, 0.5);
+  border-color: rgba(24, 178, 237, 0.5);
   background-color: transparent;
 }
 /*去色*/
@@ -6722,7 +6692,7 @@ aside {
 /*激活状态*/
 .button-group > span:not(.disable).active,
 .button-group > span:not(.disable):active {
-  color: #36acf4;
+  color: #18b2ed;
   background-color: #ffffff;
 }
 /*禁用状态*/
@@ -6754,7 +6724,7 @@ aside {
   background-color: #f4984e;
 }
 .mark-primary {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*----------------buttongroup.less(end)--------------*/
 /*----------------popup.less.less(start)--------------*/
@@ -6820,7 +6790,7 @@ select,
 .input-box.click .icon:active,
 .input-box .icon.click:active,
 .input-box .icon.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .input-box.required {
   border-color: #e7eabd;
@@ -6831,8 +6801,8 @@ select,
 }
 .input-box.reverse {
   color: #ffffff;
-  border-color: #36acf4;
-  background-color: #36acf4;
+  border-color: #18b2ed;
+  background-color: #18b2ed;
 }
 .input-box.reverse input,
 .input-box.reverse input::-webkit-input-placeholder {
@@ -6841,20 +6811,20 @@ select,
 /*----------------inputbox.less(end)--------------*/
 /*----------------dragrefresh.less(start)--------------*/
 .dragrefresh {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .dragrefresh svg path {
-  fill: #36acf4;
+  fill: #18b2ed;
 }
 /*----------------dragrefresh.less(end)--------------*/
 /*----------------clock.less(start)--------------*/
 .clock {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 .clock .origin,
 .clock .hour,
 .clock .minute {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .clock.color-1 {
   border-color: #53c6fd;
@@ -6958,7 +6928,7 @@ input[type=range] {
   background-color: #dddddd;
 }
 input[type=range]::-webkit-slider-thumb {
-  background-color: #36acf4;
+  background-color: #18b2ed;
   border-color: red;
 }
 /*----------------range.less(end)--------------*/
@@ -6975,23 +6945,23 @@ progress {
   background-color: transparent;
 }
 progress::-moz-progress-bar {
-  background: #36acf4;
+  background: #18b2ed;
 }
 progress::-webkit-progress-bar {
   background: transparent;
 }
 progress::-webkit-progress-value {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .progress-bar {
   color: white;
   background-color: #cccccc;
 }
 .progress {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*----------------progress.less(end)--------------*/
-/*-----------------------------checkbox.less(start)-----------------------------*/
+/*----------------checkbox.less(start)----------------*/
 input[type="checkbox"],
 input[type="radio"],
 .checkbox,
@@ -7002,7 +6972,7 @@ input[type="checkbox"]:checked,
 input[type="radio"]:checked,
 .checkbox.active,
 .radio.active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 input[type="checkbox"][disabled],
 input[type="radio"][disabled],
@@ -7014,7 +6984,7 @@ input[type="radio"][disabled]:checked,
 .radio.disabled {
   color: #d9d9d9;
 }
-/*-----------------------------checkbox.less(end)-----------------------------*/
+/*----------------checkbox.less(end)----------------*/
 /*----------------richedit.less(start)--------------*/
 .richedit .emoji {
   background-color: #f4f4f4;
@@ -7030,13 +7000,34 @@ input[type="radio"][disabled]:checked,
   background-color: #dddddd;
 }
 .richedit.active .input {
-  border-color: #36acf4;
+  border-color: #18b2ed;
 }
 .richedit.active .input:before,
 .richedit.active .input:after {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*----------------richedit.less(end)--------------*/
+/*----------------scrollpicker.less(start)--------------*/
+.scrollpicker {
+  background-color: #ffffff;
+}
+.scrollpicker-header {
+  border-color: #dddddd;
+  background-color: #f4f4f4;
+}
+.scrollpicker-wrapper {
+  -webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 0%, #ffffff 40%, #ffffff 60%, transparent 100%, transparent);
+}
+.scrollpicker-slot li {
+  color: #aaaaaa;
+}
+.scrollpicker-slot li.active {
+  color: #333333;
+}
+.scrollpicker-layer-frame {
+  border-color: #dddddd;
+}
+/*----------------scrollpicker.less(end)--------------*/
 /*----------------switch.less(start)--------------*/
 /*关闭状态*/
 .switch {
@@ -7052,7 +7043,7 @@ input[type="radio"][disabled]:checked,
 }
 /*打开状态小圆点*/
 .switch.active .switch-handle {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*打开状态文字on*/
 .switch.active:after {
@@ -7066,7 +7057,7 @@ input[type="radio"][disabled]:checked,
   color: #aaaaaa;
 }
 .switch.reverse.active {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 /*----------------toggle.less(end)--------------*/
 /*----------------grid.less(start)--------------*/
@@ -7163,10 +7154,10 @@ li.sliver {
 /*----------------searchbar.less(end)----------------*/
 /*----------------loading.less(start)----------------*/
 .loading {
-  box-shadow: inset 0 0 0 4px #36acf4;
+  box-shadow: inset 0 0 0 4px #18b2ed;
 }
 .loading-more .loading {
-  box-shadow: inset 0 0 0 3px #36acf4;
+  box-shadow: inset 0 0 0 3px #18b2ed;
 }
 .loading-more,
 .loading-more .loading:before,
@@ -7182,11 +7173,11 @@ li.sliver {
   color: #666666;
 }
 .day-date .today:not(.active) {
-  color: #36acf4;
-  border-color: #36acf4;
+  color: #18b2ed;
+  border-color: #18b2ed;
 }
 .day-date .active {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .arrowleft,
 .arrowright {
@@ -7194,7 +7185,7 @@ li.sliver {
 }
 .arrowleft:active,
 .arrowright:active {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .not-this-month {
   color: #dddddd;
@@ -7245,7 +7236,7 @@ table {
 /*----------------theme.less(start)--------------*/
 /*控件颜色*/
 .color-primary {
-  color: #36acf4;
+  color: #18b2ed;
 }
 .color-placeholder {
   color: #aaaaaa;
@@ -7313,7 +7304,7 @@ table {
   background-color: transparent;
 }
 .bg-primary {
-  background-color: #36acf4;
+  background-color: #18b2ed;
 }
 .bg-white {
   background-color: white;
