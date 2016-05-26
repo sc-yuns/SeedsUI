@@ -817,7 +817,7 @@
   <script src="javascripts/application.js"></script>
   <script src="javascripts/less.min.js"></script>
   <script>
-      var cssString="";//最终生成的css字符串
+      var baseString="";//基础less字符串
       var varLessUrl="assets/less/variables.less";//变量less
       var baseLessUrl="assets/less/seedsui.less";//基本less
       var container=document.getElementById("variables");//表单
@@ -855,14 +855,14 @@
         }
         var varString=jsonToVarstr(json);
         //合成完整的css字符串
-        $.ajax({url:baseLessUrl,context:document.body,
-            success:function(data){
-              cssString=varString+data;
-              less.render(cssString,function (e, css) {
-                downloadFile('seedsui.min.css',css.css);
-            });
-          }
-        });
+        if(varString!="" && baseString!=""){
+          var cssString=varString+baseString;
+            less.render(cssString,function (e, css) {
+              downloadFile('seedsui.min.css',css.css);
+          });
+        }else{
+          alert("less尚未编译完成");
+        }
       }
       /*===========
       渲染页面
@@ -891,6 +891,11 @@
       function init(){
         $.ajax({url:varLessUrl,context:document.body,
             success:renderVariables
+        });
+        $.ajax({url:baseLessUrl,context:document.body,
+            success:function(data){
+              baseString=data;
+          }
         });
       }
       /*===========
