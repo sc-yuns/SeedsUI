@@ -1,0 +1,84 @@
+/*----------------scrollpicker.less(start)--------------*/
+.scrollpicker{
+	position:fixed;
+	bottom:0;
+	width:100%;
+	z-index:10;
+	background-color:white;
+}
+.scrollpicker-header{
+	position:relative;
+	width:100%;
+	height:43px;
+	border-top:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	background-color:#f4f4f4;
+}
+.scrollpicker-cancel,.scrollpicker-done{
+	display:inline-block;
+	position:absolute;
+	top:4px;
+	height:32px;
+	line-height:32px;
+	padding:0 5px;
+}
+.scrollpicker-cancel{
+	left:8px;
+}
+.scrollpicker-done{
+	right:8px;
+}
+.scrollpicker-wrapper{
+	display:block;
+
+	position:relative;
+	height:215px;
+	overflow:hidden;
+	-webkit-mask-box-image: -webkit-linear-gradient(bottom, transparent, transparent 0%, #fff 40%, #fff 60%, transparent 100%, transparent);
+}
+.scrollpicker-slots{
+	width:100%;
+	display:table;
+}
+.scrollpicker-slot{
+	display:table-cell;
+
+	height:215px;
+	overflow:auto;
+}
+ul.scrollpicker-slot,.scrollpicker-slot ul{
+	padding-top:86px;
+	padding-bottom:86px;
+	-webkit-transition-timing-function:cubic-bezier(0, 0, 0.2, 1);
+}
+.scrollpicker-slot li{
+	height:44px;
+    line-height:44px;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    padding:0 8px;
+    font-size:20px;
+    color:#aaa;
+}
+.scrollpicker-slot li.active{
+	color:#333;
+}
+.scrollpicker-layer{
+	position:absolute;
+    top:0;
+    height:100%;
+    width:100%;
+}
+.scrollpicker-layer-frame{
+	position:absolute;
+    top:50%;
+    height:46px;
+    width:100%;
+    pointer-events:none;
+    -webkit-transform:translateY(-50%);
+    border-width:1px 0;
+    border-style:solid;
+    border-color:#ddd;    
+}
+/*----------------scrollpicker.less(end)--------------*/

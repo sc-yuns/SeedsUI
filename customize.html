@@ -133,6 +133,9 @@
                 <li>
                   <a href="#picColor">照片</a>
                 </li>
+                <li>
+                  <a href="#commonColor">常用颜色</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -142,6 +145,7 @@
 
         <!-- 全局颜色
   ================================================== -->
+        <form id="variables">
         <div class="bs-docs-section">
           <div class="page-header">
             <h1 id="globaltheme">全局颜色</h1>
@@ -152,20 +156,24 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@white</td>
+                <td><input type="text" class="form-control" name="@white" readonly="true" /></td>
                 <td>白色</td>
               </tr>
               <tr>
                 <td>@white-active-color</td>
+                <td><input type="text" class="form-control" name="@white-active-color"/></td>
                 <td>白色点击色</td>
               </tr>
               <tr>
                 <td>@black</td>
+                <td><input type="text" class="form-control" name="@black" readonly="true"/></td>
                 <td>黑色</td>
               </tr>
             </tbody>
@@ -176,41 +184,50 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@body-bg</td>
+                <td><input type="text" class="form-control" name="@body-bg"/></td>
                 <td>默认背景色</td>
               </tr>
               <tr>
                 <td>@body-color</td>
+                <td><input type="text" class="form-control" name="@body-color"/></td>
                 <td>默认文字色</td>
               </tr>
               <tr>
                 <td>@border</td>
+                <td><input type="text" class="form-control" name="@border"/></td>
                 <td>边框色</td>
               </tr>
               <tr>
                 <td>@label-color</td>
+                <td><input type="text" class="form-control" name="@label-color"/></td>
                 <td>标签色</td>
               </tr>
               <tr>
                 <td>@placeholder-color</td>
+                <td><input type="text" class="form-control" name="@placeholder-color"/></td>
                 <td>占位符色</td>
               </tr>
               
               <tr>
                 <td>@link-color</td>
+                <td><input type="text" class="form-control" name="@link-color"/></td>
                 <td>链接色</td>
               </tr>
               <tr>
                 <td>@link-active-property</td>
+                <td><input type="text" class="form-control" name="@link-active-property"/></td>
                 <td>链接点击属性</td>
               </tr>
               <tr>
                 <td>@link-active-value</td>
+                <td><input type="text" class="form-control" name="@link-active-value"/></td>
                 <td>链接点击值</td>
               </tr>
             </tbody>
@@ -221,32 +238,39 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@primary-bg</td>
+                <td><input type="text" class="form-control" name="@primary-bg"/></td>
                 <td>主色</td>
               </tr>
               <tr>
                 <td>@primary-active-bg</td>
+                <td><input type="text" class="form-control" name="@primary-active-bg"/></td>
                 <td>主色点击色</td>
               </tr>
               <tr>
                 <td>@primary-title-color</td>
+                <td><input type="text" class="form-control" name="@primary-title-color"/></td>
                 <td>主色上的标题色</td>
               </tr>
               <tr>
                 <td>@primary-color</td>
+                <td><input type="text" class="form-control" name="@primary-color"/></td>
                 <td>主色上的文字色</td>
               </tr>
               <tr>
                 <td>@primary-active-color</td>
+                <td><input type="text" class="form-control" name="@primary-active-color"/></td>
                 <td>主色上的文字点击色</td>
               </tr>
               <tr>
                 <td>@mask-bg</td>
+                <td><input type="text" class="form-control" name="@mask-bg"/></td>
                 <td>遮罩颜色</td>
               </tr>
             </tbody>
@@ -256,68 +280,84 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@disable-bg</td>
+                <td><input type="text" class="form-control" name="@disable-bg"/></td>
                 <td>禁用色</td>
               </tr>
               <tr>
                 <td>@submit-bg</td>
+                <td><input type="text" class="form-control" name="@submit-bg"/></td>
                 <td>提交色</td>
               </tr>
               <tr>
                 <td>@submit-active-bg</td>
+                <td><input type="text" class="form-control" name="@submit-active-bg"/></td>
                 <td>提交点击色</td>
               </tr>
               <tr>
                 <td>@cancel-bg</td>
+                <td><input type="text" class="form-control" name="@cancel-bg"/></td>
                 <td>取消色</td>
               </tr>
               <tr>
                 <td>@cancel-active-bg</td>
+                <td><input type="text" class="form-control" name="@cancel-active-bg"/></td>
                 <td>取消点击色</td>
               </tr>
               <tr>
                 <td>@success-bg</td>
+                <td><input type="text" class="form-control" name="@success-bg"/></td>
                 <td>成功色</td>
               </tr>
               <tr>
                 <td>@success-active-bg</td>
+                <td><input type="text" class="form-control" name="@success-active-bg"/></td>
                 <td>成功点击色</td>
               </tr>
               <tr>
                 <td>@info-bg</td>
+                <td><input type="text" class="form-control" name="@info-bg"/></td>
                 <td>信息色</td>
               </tr>
               <tr>
                 <td>@info-active-bg</td>
+                <td><input type="text" class="form-control" name="@info-active-bg"/></td>
                 <td>信息点击色</td>
               </tr>
               <tr>
                 <td>@warn-bg</td>
+                <td><input type="text" class="form-control" name="@warn-bg"/></td>
                 <td>警告色</td>
               </tr>
               <tr>
                 <td>@warn-active-bg</td>
+                <td><input type="text" class="form-control" name="@warn-active-bg"/></td>
                 <td>警告点击色</td>
               </tr>
               <tr>
                 <td>@highlight-bg</td>
+                <td><input type="text" class="form-control" name="@highlight-bg"/></td>
                 <td>高亮色</td>
               </tr>
               <tr>
                 <td>@tip-bg</td>
+                <td><input type="text" class="form-control" name="@tip-bg"/></td>
                 <td>消息提示色</td>
               </tr>
               <tr>
                 <td>@tip-color</td>
+                <td><input type="text" class="form-control" name="@tip-color"/></td>
                 <td>消息提示上文字色</td>
               </tr>
               <tr>
                 <td>@title-color</td>
+                <td><input type="text" class="form-control" name="@title-color"/></td>
                 <td>标题文字色</td>
               </tr>
             </tbody>
@@ -337,12 +377,14 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@input-bg</td>
+                <td><input type="text" class="form-control" name="@input-bg"/></td>
                 <td>文本框背景色</td>
               </tr>
             </tbody>
@@ -353,28 +395,34 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@titlebar-bg</td>
+                <td><input type="text" class="form-control" name="@titlebar-bg"/></td>
                 <td>头部导航背景色</td>
               </tr>
               <tr>
                 <td>@titlebar-color</td>
+                <td><input type="text" class="form-control" name="@titlebar-color"/></td>
                 <td>头部导航文字色</td>
               </tr>
               <tr>
                 <td>@titlebar-link-color</td>
+                <td><input type="text" class="form-control" name="@titlebar-link-color"/></td>
                 <td>头部导航链接色</td>
               </tr>
               <tr>
                 <td>@titlebar-link-active-color</td>
+                <td><input type="text" class="form-control" name="@titlebar-link-active-color"/></td>
                 <td>头部导航链接点击色</td>
               </tr>
               <tr>
                 <td>@titlebar-border</td>
+                <td><input type="text" class="form-control" name="@titlebar-border"/></td>
                 <td>头部导航边框色</td>
               </tr>
             </tbody>
@@ -384,28 +432,29 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@titlebar-reverse-bg</td>
+                <td><input type="text" class="form-control" name="@titlebar-reverse-bg"/></td>
                 <td>头部导航背景反转色</td>
               </tr>
               <tr>
                 <td>@titlebar-reverse-color</td>
+                <td><input type="text" class="form-control" name="@titlebar-reverse-color"/></td>
                 <td>头部导航文字反转色</td>
               </tr>
               <tr>
-                <td>@titlebar-reverse-color</td>
-                <td>头部导航链接反转色</td>
-              </tr>
-              <tr>
                 <td>@titlebar-reverse-active-color</td>
+                <td><input type="text" class="form-control" name="@titlebar-reverse-active-color"/></td>
                 <td>头部导航链接点击反转色</td>
               </tr>
               <tr>
                 <td>@titlebar-reverse-border</td>
+                <td><input type="text" class="form-control" name="@titlebar-reverse-border"/></td>
                 <td>头部导航边框反转色</td>
               </tr>
             </tbody>
@@ -416,24 +465,29 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@menubar-bg</td>
+                <td><input type="text" class="form-control" name="@menubar-bg"/></td>
                 <td>底部导航背景色</td>
               </tr>
               <tr>
                 <td>@menubar-color</td>
+                <td><input type="text" class="form-control" name="@menubar-color"/></td>
                 <td>底部导航文字色</td>
               </tr>
               <tr>
                 <td>@menubar-active-color</td>
+                <td><input type="text" class="form-control" name="@menubar-active-color"/></td>
                 <td>底部导航文字点击色</td>
               </tr>
               <tr>
                 <td>@menubar-border</td>
+                <td><input type="text" class="form-control" name="@menubar-border"/></td>
                 <td>底部导航边框色</td>
               </tr>
             </tbody>
@@ -443,24 +497,29 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@menubar-reverse-bg</td>
+                <td><input type="text" class="form-control" name="@menubar-reverse-bg"/></td>
                 <td>底部导航背景反转色</td>
               </tr>
               <tr>
                 <td>@menubar-reverse-color</td>
+                <td><input type="text" class="form-control" name="@menubar-reverse-color"/></td>
                 <td>底部导航文字反转色</td>
               </tr>
               <tr>
                 <td>@menubar-reverse-active-color</td>
+                <td><input type="text" class="form-control" name="@menubar-reverse-active-color"/></td>
                 <td>底部导航文字点击反转色</td>
               </tr>
               <tr>
                 <td>@menubar-reverse-border</td>
+                <td><input type="text" class="form-control" name="@menubar-reverse-border"/></td>
                 <td>底部导航边框反转色</td>
               </tr>
             </tbody>
@@ -471,28 +530,34 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@button-bg</td>
+                <td><input type="text" class="form-control" name="@button-bg"/></td>
                 <td>按钮背景色</td>
               </tr>
               <tr>
                 <td>@button-color</td>
+                <td><input type="text" class="form-control" name="@button-color"/></td>
                 <td>按钮文字色</td>
               </tr>
               <tr>
                 <td>@button-active-bg</td>
+                <td><input type="text" class="form-control" name="@button-active-bg"/></td>
                 <td>按钮点击背景色</td>
               </tr>
               <tr>
                 <td>@button-active-color</td>
+                <td><input type="text" class="form-control" name="@button-active-color"/></td>
                 <td>按钮点击文字色</td>
               </tr>
               <tr>
                 <td>@button-tip-bg</td>
+                <td><input type="text" class="form-control" name="@button-tip-bg"/></td>
                 <td>按钮上提示消息背景色</td>
               </tr>
             </tbody>
@@ -503,12 +568,14 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@aside-bg</td>
+                <td><input type="text" class="form-control" name="@aside-bg"/></td>
                 <td>侧边栏背景色</td>
               </tr>
             </tbody>
@@ -519,16 +586,19 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@list-bg</td>
+                <td><input type="text" class="form-control" name="@list-bg"/></td>
                 <td>列表背景色</td>
               </tr>
               <tr>
                 <td>@list-active-bg</td>
+                <td><input type="text" class="form-control" name="@list-active-bg"/></td>
                 <td>列表背景点击色</td>
               </tr>
             </tbody>
@@ -539,16 +609,19 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@chat-odd-bg</td>
+                <td><input type="text" class="form-control" name="@chat-odd-bg"/></td>
                 <td>聊天奇行背景色</td>
               </tr>
               <tr>
                 <td>@chat-even-bg</td>
+                <td><input type="text" class="form-control" name="@chat-even-bg"/></td>
                 <td>聊天偶行背景色</td>
               </tr>
             </tbody>
@@ -559,12 +632,14 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@toast-bg</td>
+                <td><input type="text" class="form-control" name="@toast-bg"/></td>
                 <td>小弹框背景色</td>
               </tr>
             </tbody>
@@ -575,16 +650,19 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@required-bg</td>
+                <td><input type="text" class="form-control" name="@required-bg"/></td>
                 <td>必填项背景色</td>
               </tr>
               <tr>
                 <td>@required-border</td>
+                <td><input type="text" class="form-control" name="@required-border"/></td>
                 <td>必填项边框色</td>
               </tr>
             </tbody>
@@ -595,12 +673,14 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@table-color</td>
+                <td><input type="text" class="form-control" name="@table-color"/></td>
                 <td>表格文字色</td>
               </tr>
             </tbody>
@@ -611,16 +691,19 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>@progress-bg</td>
+                <td><input type="text" class="form-control" name="@progress-bg"/></td>
                 <td>进度条背景色</td>
               </tr>
               <tr>
                 <td>@progress-color</td>
+                <td><input type="text" class="form-control" name="@progress-color"/></td>
                 <td>进度条文字色</td>
               </tr>
             </tbody>
@@ -631,23 +714,89 @@
             <thead>
               <tr>
                 <th>变量名称</th>
+                <th>值</th>
                 <th>描述</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>@progress-bg</td>
-                <td>进度条背景色</td>
+                <td>@photo-bg</td>
+                <td><input type="text" class="form-control" name="@photo-bg"/></td>
+                <td>照片背景色</td>
               </tr>
               <tr>
-                <td>@progress-color</td>
-                <td>进度条文字色</td>
+                <td>@photo-color</td>
+                <td><input type="text" class="form-control" name="@photo-color"/></td>
+                <td>照片文字色</td>
               </tr>
             </tbody>
           </table>
 
+          <h3 id="commonColor">常用颜色</h3>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>变量名称</th>
+                <th>值</th>
+                <th>描述</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>@color-1</td>
+                <td><input type="text" class="form-control" name="@color-1"/></td>
+                <td>常用颜色1</td>
+              </tr>
+              <tr>
+                <td>@color-2</td>
+                <td><input type="text" class="form-control" name="@color-2"/></td>
+                <td>常用颜色2</td>
+              </tr>
+              <tr>
+                <td>@color-3</td>
+                <td><input type="text" class="form-control" name="@color-3"/></td>
+                <td>常用颜色3</td>
+              </tr>
+              <tr>
+                <td>@color-4</td>
+                <td><input type="text" class="form-control" name="@color-4"/></td>
+                <td>常用颜色4</td>
+              </tr>
+              <tr>
+                <td>@color-5</td>
+                <td><input type="text" class="form-control" name="@color-5"/></td>
+                <td>常用颜色5</td>
+              </tr>
+              <tr>
+                <td>@color-6</td>
+                <td><input type="text" class="form-control" name="@color-6"/></td>
+                <td>常用颜色6</td>
+              </tr>
+              <tr>
+                <td>@color-7</td>
+                <td><input type="text" class="form-control" name="@color-7"/></td>
+                <td>常用颜色7</td>
+              </tr>
+              <tr>
+                <td>@color-8</td>
+                <td><input type="text" class="form-control" name="@color-8"/></td>
+                <td>常用颜色8</td>
+              </tr>
+              <tr>
+                <td>@color-9</td>
+                <td><input type="text" class="form-control" name="@color-9"/></td>
+                <td>常用颜色9</td>
+              </tr>
+              <tr>
+                <td>@color-10</td>
+                <td><input type="text" class="form-control" name="@color-10"/></td>
+                <td>常用颜色10</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-
+        </form>
+        <input type="button" class="btn btn-default btn-lg" data-toggle="dropdown" value="编译并下载" onclick="submit()" />
         <!-- The End
   ================================================== --> </div>
     </div>
@@ -665,5 +814,106 @@
   <script src="javascripts/highlight.min.js"></script>
   <script >hljs.initHighlightingOnLoad();</script>
   <script src="javascripts/application.js"></script>
+  <script src="javascripts/less.min.js"></script>
+  <script>
+      var cssString="";//最终生成的css字符串
+      var varLessUrl="assets/less/variables.less";//变量less
+      var baseLessUrl="assets/less/seedsui.less";//基本less
+      var container=document.getElementById("variables");//表单
+      /*===========
+      生成文件
+      ============*/
+        //使用超链接的特性下载文件
+      function downloadFile(fileName, content){
+          var aLink = document.createElement('a');
+          var blob = new Blob([content]);
+          var evt = document.createEvent("HTMLEvents");
+          evt.initEvent("click", false, false);//initEvent 不加后两个参数在FF下会报错, 感谢 Barret Lee 的反馈
+          aLink.download = fileName;
+          aLink.href = URL.createObjectURL(blob);
+          aLink.dispatchEvent(evt);
+      }
+      //提交
+      function submit(){
+        for(var i=0,field;field=container.elements[i++];){
+          //过滤没有name的表单元素
+          if(!field.type || !field.name){
+            continue;
+          }
+          //过滤button、reset、submit
+          if(field.type=="button" || field.type=="reset" || field.type=="submit"){
+            continue;
+          }
+          //过滤未选中的checkbox和radio
+          if(field.type=="radio" || field.type=="checkbox"){
+            if(!field.checked){
+              continue;
+            }
+          }
+          json[field.name]=field.value;
+        }
+        var varString=jsonToVarstr(json);
+        //合成完整的css字符串
+        $.ajax({url:baseLessUrl,context:document.body,
+            success:function(data){
+              cssString=varString+data;
+              less.render(cssString,function (e, css) {
+                downloadFile('seedsui.min.css',css.css);
+            });
+          }
+        });
+      }
+      /*===========
+      渲染页面
+      ============*/
+      //渲染变量到页面上
+      var json={};
+      function renderVariables(str){
+        var minStr=minify(str);
+        var arr=minStr.split(";");
+        for(var i=0;i<arr.length;i++){
+          var option=arr[i].split(":");
+          var fieldName=trim(option[0]);
+          var fieldValue=option[1];
+          if(fieldValue){
+            createElements(fieldName,fieldValue);
+            json[fieldName]=fieldValue;
+          }
+        }
+      }
+      function createElements(fieldName,fieldValue){
+        var field=document.getElementsByName(fieldName)[0];
+        if(field)field.value=fieldValue;
+      }
+      
+      //初始化变量数据
+      function init(){
+        $.ajax({url:varLessUrl,context:document.body,
+            success:renderVariables
+        });
+      }
+      /*===========
+      工具方法
+      ============*/
+      function clearAnnotate(str){
+        //清除注释/*xxxx*/
+        return str.replace(/\/\*.*\*\//g, "");
+      }
+      function trim(str){
+        return str.replace(/\s/g, "");
+      }
+      function minify(str){
+        //var minStr=trim(str);//trim有问题，会多删东西
+        return clearAnnotate(str);
+      }
+      function jsonToVarstr(jsonobj){
+        var str="";
+        for(var jsn in jsonobj){
+          str+=jsn+":"+jsonobj[jsn]+";";
+        }
+        return str.replace(/:undefined;/g,"");
+      }
+      window.onload=init();
+    </script>
 </body>
 </html>
