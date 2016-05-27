@@ -372,17 +372,17 @@
 				</ul>
 			</div>
 
-			<div id="weixinlocal" style="display: none;">
+			<!-- <div id="weixinlocal" style="display: none;">
 				<div class="sliver">微信本地能力</div>
 				<ul class="grid thumbnail">
 					<li>
-						<a href="javascript:Exmobi.openWebview('res:page/www/components/weixin.html')">
+						<a href="weixin.html">
 							<img src="thumbnail/weixin.png"/>
 						</a>
 						<label class="grid-label">微信本地能力</label>
 					</li>
 				</ul>
-			</div>
+			</div> -->
 
 			<div class="sliver">html5本地能力</div>
 			<ul class="grid thumbnail">
@@ -447,9 +447,9 @@
 			document.getElementById("exmobilocal").style.display="block";
 		},false);
 		//判断是否是微信环境
-		if(Device.isWeixin){
+		/*if(Device.isWeixin){
 			document.getElementById("weixinlocal").style.display="block";
-		}
+		}*/
 		//定义exmobi返回
 		function back(){Exmobi.dbclose();}
 	</script>
