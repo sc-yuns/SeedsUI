@@ -42,12 +42,17 @@
 		/*悬浮日期框*/
 		.signDate{
 			position: absolute;
-			top:10px;
+			top:60px;
 			left:10px;
-			width: 120px;
+			width: 150px;
 			overflow: hidden;
 			box-shadow: 1px 2px 2px 0 rgba(0,0,0,.4);
+			text-align:left;
 			z-index: 99999;
+			color: #ffffff;
+    		border-color: #18b2ed;
+    		background-color: #18b2ed;
+    		border-radius:8px;
 		}
 		.signDate input,.signDate i{
 			color:white;
@@ -56,51 +61,46 @@
 </head>
 
 <body ontouchstart="">
-	<section class="active">
 		<header>
 		    <div class="titlebar">
-		        <a href="javascript:back()"><i class="icon icon-arrowleft"></i></a>
+		        <a class="titlebar-button" href="javascript:back()"><i class="icon icon-arrowleft"></i></a>
 		        <h1>签到地图</h1>
 		    </div>
 		</header>
-		<article style="padding-bottom:150px;">
-			<div class="input-box reverse radius20 height32 signDate">
-				<input type="date" id="expireDate" style="padding-top:0;padding-bottom:0;">
+		<article class="scrollbox" style="padding-bottom:150px;">
+			<div class="inputbox reverse radius20 signDate" style="height:32px;">
+				<input type="date" id="expireDate" style="padding-top:0;padding-bottom:0;    background-color: transparent;">
 				<i class="icon icon-calendar"></i>
 			</div>
 			<div id="allmap" class="height-full"></div>
 		</article>
 		<footer style="height: 150px;background-color:white;">
-			<ul class="list noclick">
-				<li>
-					<div class="justify-content">最新签到<b>1</b>人（已签<b>1</b>人，未签<b>2</b>人）</div>
-					<div class="justify">
-						<a>详细></a>
-					</div>
-				</li>
-			</ul>
+			<div class="box padding8">
+				<div class="box-flex-1">最新签到<b>1</b>人（已签<b>1</b>人，未签<b>2</b>人）</div>
+				<div><a>详细></a></div>
+			</div>
 			<div id="signPeople">
-				<ul class="grid size50" data-col="4">
+				<ul class="grid" data-col="4">
 					<li>
-						<a class="photo color-white" style="background-color: #53c6fd;border-color: #53c6fd;">
+						<a class="size50 radiusround color-white" style="background-color: #53c6fd;border-color: #53c6fd;">
 							阳
 						</a>
 						<label class="grid-label">蔡宇阳</label>
 					</li>
 					<li>
-						<a class="photo color-white" style="background-color: #ffae02;border-color: #ffae02;">
+						<a class="size50 radiusround color-white" style="background-color: #ffae02;border-color: #ffae02;">
 							波
 						</a>
 						<label class="grid-label">成少波</label>
 					</li>
 					<li>
-						<a class="photo color-white" style="background-color: #3ae3ea;border-color: #3ae3ea;">
+						<a class="size50 radiusround color-white" style="background-color: #3ae3ea;border-color: #3ae3ea;">
 							进
 						</a>
 						<label class="grid-label">李进</label>
 					</li>
 					<li>
-						<a class="photo color-white" style="background-color: #ff6f36;border-color: #ff6f36;">
+						<a class="size50 radiusround color-white" style="background-color: #ff6f36;border-color: #ff6f36;">
 							梅
 						</a>
 						<label class="grid-label">许啸梅</label>
@@ -108,17 +108,16 @@
 				</ul>
 			</div>
 		</footer>
-	</section>
 	<!-- 加载遮罩 -->
-	<div class="popup-mask hide" style="opacity: 1;display: block;"></div>
+	<div class="mask hide" style="opacity: 1;display: block;"></div>
 	<div class="loading-box box box-middlecenter hide">
 		<div class="loading"></div>
 	</div>
 
-	<script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
+    <script src="../plugin/seedsui/seedsui.baidumap.js"></script>
     <!--Exmobi能力-->
-    <script src="../plugin/exmobi/exmobi.js"></script>
+    <!--<script src="../plugin/exmobi/exmobi.js"></script>-->
     <!--百度地图-->
 	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=8830f84901336e9afd2c6d7033d2ebe5"></script>
 	<script>
@@ -143,18 +142,18 @@
 	        dateInput = document.getElementById('expireDate'),
 	        today = new Date();
 	        dateInput.valueAsDate = today;
-	        $(dateInput).change(function(){
+	        dateInput.onchange=function(){
 	            var inputDate = dateInput.valueAsDate;
 	            if (inputDate > today){
 	                dateToast.show();
 	                dateInput.valueAsDate = today;
 	            }
-	        });  
+	        };  
 	    }
 	    /*=============
 		遮罩
 		==============*/
-		var loadingMask=document.querySelector(".popup-mask"),loadingBox=document.querySelector(".loading-box");
+		var loadingMask=document.querySelector(".mask"),loadingBox=document.querySelector(".loading-box");
 		function showLoading(){
 			loadingMask.classList.remove("hide");
 			loadingBox.classList.remove("hide");

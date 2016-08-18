@@ -10,7 +10,7 @@
 <body ontouchstart="">
 		<header>
 		    <div class="titlebar">
-		        <a href="javascript:back()"><i class="icon icon-arrowleft"></i></a>
+		        <a class="titlebar-button" href="javascript:back()"><i class="icon icon-arrowleft"></i></a>
 		        <h1>本地数据</h1>
 		    </div>
 		</header>
@@ -19,10 +19,9 @@
 			<a class="button block margin8 info" href="javascript:alertVal(DB.get('test'))">获得localstore里key为“test”的值</a>
 		</article>
 	
-	<script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
     <!--Exmobi能力-->
-    <script src="../plugin/exmobi/exmobi.js"></script>
+    <!--<script src="../plugin/exmobi/exmobi.js"></script>-->
 	<script>
 	function alertVal(val){
 		var at=new Alert("存储于数据库的值为："+val);

@@ -16,7 +16,7 @@
 <body ontouchstart="">
     <header>
       <div class="titlebar">
-        <a href="javascript:back()">
+        <a class="titlebar-button" href="javascript:back()">
             <i class="icon icon-arrowleft"></i>
         </a>
         <h1>无网络</h1>
@@ -131,10 +131,9 @@
             <a class="button block submit" style="margin:0px 10px 100px 10px;">重试</a>
         </div>
     </article>
-    <script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
     <!--Exmobi能力-->
-    <script src="../plugin/exmobi/exmobi.js"></script>
+    <!--<script src="../plugin/exmobi/exmobi.js"></script>-->
     <script>
         //定义exmobi返回
         function back(){history.go(-1);}

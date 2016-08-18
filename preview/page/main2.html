@@ -6,59 +6,106 @@
         <meta name="format-detection" content="telephone=no">
         <title>main2</title>
         <link rel="stylesheet" href="../plugin/seedsui/seedsui.min.css">
-        <link rel="stylesheet" href="../css/main2.css"/>
+        <style type="text/css">
+        /*列表标题*/
+        .app-listBar{
+            display: -webkit-box;
+            -webkit-box-align:center;
+            background-color: white;
+            border-style: solid;
+            border-width: 0 0 1px 0;
+            border-color: #e6e6e6;
+        }
+        .app-peg{
+            display:inline-block;
+            width:6px;
+            height:12px;
+            background-color:#18b2ed;
+        }
+        .app-listBar .app-peg{
+            margin: 8px;
+        }
+        .app-listBar .app-listBarTitle{
+            display: block;
+            padding: 8px 0;
+            -webkit-box-flex:1;
+        }
+        .app-listBar .app-listBarMore{
+            font-size: 12px;
+            color: #aaaaaa;
+            margin: 8px;
+        }
+        /*块级列表*/
+        .app-block li{
+            text-align:left;
+        }
+        .app-block li > a{
+            min-height:90px;
+        }
+        .blockcase li:nth-child(odd){
+            padding:8px 4px 16px 8px;
+        }
+        .blockcase li:nth-child(even){
+            padding:8px 8px 16px 4px;
+        }
+        </style>
     </head>
-<body ontouchstart="">
+<body ontouchstart="" style="background-color: white;">
 	<header>
 		<div class="titlebar">
-			<a href="javascript:back()">
+			<a class="titlebar-button" href="javascript:back()">
 	            <i class="icon icon-arrowleft"></i>
 	        </a>
-			<h1><span>主页2</span><img src="../img/main2/arrow.png" style="width:10px;margin-left:4px;"/></h1>
+			<h1>主页2</h1>
 		</div>
 	</header>
 	<article>
-        <div class="modebox mode-area" id="modebox">
-        	<div class="topic">
-        		<img src="../img/main2/banner.jpg" class="width-full"/>
-            	<ul class="introduce">
-            		<li class="title"><div class="dot"></div><label>专题介绍</label></li>
-            		<li>专题介绍内容专题介绍内容专题介绍内容专题介绍内容专题介绍内容专题介绍内容专题介绍内容专题介绍内容</li>
-            		<li class="title"><div class="dot"></div><label>学习资料</label></li>
-            	</ul>
-        	</div>
-        	<div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case1.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
-            <div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case2.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
-            <div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case3.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
-            <div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case4.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
-            <div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case5.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
-            <div class="modecase">
-            	<div class="modecase-img" style="background-image:url(../img/main2/case6.png)"></div>
-                <div class="modecase-title">交通部：沉船救援下一步重点在抽水起浮打捞</div>
-            </div>
+        <div class="app-listBar">
+            <span class="app-peg"></span>
+            <p class="app-listBarTitle">最新资讯</p>
+            <a class="app-listBarMore">
+                <label>查看全部</label>
+                <i class="icon icon-arrowbittoright size12"></i>
+            </a>
         </div>
+        <ul class="grid app-block" data-col="2" data-rowspace="8">
+            <li>
+                <a style="background-image:url(../img/main2/case1.png)"></a>
+                <label class="text-left">沉船救援下一步重点在抽水起浮打捞</label>
+                <small>交通部</small>
+            </li>
+            <li>
+                <a style="background-image:url(../img/main2/case2.png)"></a>
+                <label class="text-left">听听音乐吧</label>
+                <small>烽火音乐</small>
+            </li>
+            <li>
+                <a style="background-image:url(../img/main2/case3.png)"></a>
+                <label class="text-left">听听音乐吧</label>
+                <small>烽火音乐</small>
+            </li>
+            <li>
+                <a style="background-image:url(../img/main2/case4.png)"></a>
+                <label class="text-left">听听音乐吧</label>
+                <small>烽火音乐</small>
+            </li>
+            <li>
+                <a style="background-image:url(../img/main2/case5.png)"></a>
+                <label class="text-left">听听音乐吧</label>
+                <small>烽火音乐</small>
+            </li>
+            <li>
+                <a style="background-image:url(../img/main2/case6.png)"></a>
+                <label class="text-left">听听音乐吧</label>
+                <small>烽火音乐</small>
+            </li>
+        </ul>
 	</article>
 	
 	
-    <script src="../plugin/jquery/jquery.min.js"></script>
     <script src="../plugin/seedsui/seedsui.min.js"></script>
     <!--Exmobi能力-->
-    <script src="../plugin/exmobi/exmobi.js"></script>
+    <!--<script src="../plugin/exmobi/exmobi.js"></script>-->
     <script>
 		//定义exmobi返回
 		function back(){history.go(-1);}

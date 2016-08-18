@@ -46,6 +46,9 @@
             <a href="components.html">组件</a>
           </li>
           <li>
+            <a href="jcomponents.html">JavaScript组件</a>
+          </li>
+          <li>
             <a href="javascript.html">其它插件</a>
           </li>
           <li>
@@ -104,22 +107,17 @@ seedsui/
 ├── js/
 ├── page/
 ├── plugin/
-│   ├── animate/
-│   ├── charts/
-│   ├── exmobi/
-│   ├── iscroll/
-│   ├── jquery/
-│   ├── seedsui/
-│   ├── swiper/
-│   └── weixin/
-└── theme/
-└── theme-default/
-└── theme-blue/
-└── theme-cyan/
+└── animate/
+    ├── seedsui/
+    ├── echarts/
+    ├── exmobi/
+    ├── jquery/
+    ├── zepto/
+    └── weixin/
                 </code></pre></div>
           <p>
             1.<code>assets/</code>
-            目录包含了预编译SeedsUI包内的所有文件，包含导航、按钮、单页模式等等单个组件。
+            目录包含了预编译SeedsUI包内的所有文件，包含导航、按钮、单页模式等等单个组件，并且包含了皮肤设置文件。
           </p>
           <p>
             2.<code>css/</code>
@@ -138,10 +136,6 @@ seedsui/
           <p>
             4.<code>plugin/</code>
             包含了生成后的SeedsUI插件和常用的h5插件。
-          <p>
-            5.<code>theme/</code>
-            包含预编译的皮肤文件，可通过修改目录theme-XX/下的variable.less文件，生成换肤文件，再替换到plugin/seedsui/seedsui.min.css，而达到换肤的效果。
-          </p>
         </div>
 
         <!-- 基本模版
@@ -154,34 +148,37 @@ seedsui/
           <p>拷贝并粘贴下面给出的HTML代码，这就是一个最简单的SeedsUI页面了。</p>
           <div class="highlight">
             <pre><code class="language-html xml">
-<span class="doctype">&lt;!doctype html&gt;</span>
-<span class="tag">&lt;<span class="title">html</span>&gt;</span>
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"viewport"</span> <span class="attribute">content</span>=<span class="value">"width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">meta</span> <span class="attribute">name</span>=<span class="value">"format-detection"</span> <span class="attribute">content</span>=<span class="value">"telephone=no"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">title</span>&gt;</span>SeedsUI模板<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"../plugin/seedsui/seedsui.min.css"</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0&quot;&gt;
+&lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;
+&lt;title&gt;SeedsUI模板&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;../plugin/seedsui/seedsui.min.css&quot;&gt;
+&lt;/head&gt;
 
-<span class="tag">&lt;<span class="title">body ontouchstart=""</span>&gt;</span>
-<span class="tag">&lt;<span class="title">header</span>&gt;</span>
-<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"titlebar"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"javascript:history.go(-1)"</span>&gt;</span><span class="tag">&lt;<span class="title">i</span> <span class="attribute">class</span>=<span class="value">"icon icon-arrowleft"</span>&gt;</span><span class="tag">&lt;/<span class="title">i</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-<span class="tag">&lt;<span class="title">h1</span>&gt;</span>标题<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">header</span>&gt;</span>
-<span class="tag">&lt;<span class="title">article</span>&gt;</span>
-<span class="comment">&lt;!--页面内容--&gt;</span>
-<span class="tag">&lt;/<span class="title">article</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../plugin/jquery/jquery.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../plugin/seedsui/seedsui.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">
-<span class="comment">//定义exmobi返回</span>
-<span class="function"><span class="keyword">function</span> <span class="title">back</span><span class="params">()</span>{</span>history.go(-<span class="number">1</span>);}
-</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+&lt;body ontouchstart=&quot;&quot;&gt;
+&lt;header&gt;
+  &lt;div class=&quot;titlebar&quot;&gt;
+    &lt;a class=&quot;titlebar-button&quot; href=&quot;javascript:history.go(-1)&quot;&gt;
+      &lt;i class=&quot;icon icon-arrowleft&quot;&gt;&lt;/i&gt;
+    &lt;/a&gt;
+    &lt;h1&gt;标题&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;article&gt;
+&lt;!--页面内容--&gt;
+&lt;/article&gt;
+&lt;script src=&quot;../plugin/seedsui/seedsui.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+//定义exmobi返回
+function back(){
+  history.go(-1);
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre>
           </div>
         </div>
