@@ -1252,3 +1252,23 @@ h1[id] {
   margin-top: 15px;
   margin-bottom: 5px;
 }
+.cbotitle{
+  display: block;
+}
+.cbotitle span{
+  font-size: 24px;font-weight: 500;
+}
+.cbotitle input[type=checkbox]{
+  float: right;
+  margin-top: 10px;
+}
+.cboH1title{
+  display: block;
+}
+.cboH1title span{
+  font-size: 40px;font-weight: 500;
+}
+.cboH1title input[type=checkbox]{
+  float: right;
+  margin-top: 30px;
+}
