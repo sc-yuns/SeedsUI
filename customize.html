@@ -52,7 +52,7 @@
             <a href="javascript.html">其它插件</a>
           </li>
           <li class="active">
-            <a href="index.html">换肤</a>
+            <a href="index.html">定制</a>
           </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -1121,7 +1121,7 @@
         </div>
 
         <p class="lead">建议使用Google Chrome浏览器编译下载，其它浏览器可能会下载失败。点击下载按钮后，可能1分钟的过程，请耐心等待</p>
-        <input type="button" class="btn btn-default btn-lg" data-toggle="dropdown" value="编译并下载" onclick="submit()" />
+        <input type="button" class="btn btn-default btn-lg btn-block" data-toggle="dropdown" value="编译并下载" id="Btn-Submit"/>
         <!-- The End
   ================================================== --> </div>
     </div>
@@ -1170,7 +1170,11 @@
       //组件多选框
       var cboComponents=document.getElementsByName("NID-CboComponent");
 
-      function submit(){
+      document.getElementById("Btn-Submit").onclick=submit;
+
+      function submit(e){
+        var self=e.target;
+        self.setAttribute("disabled","disabled");
         //获得less的变量字符串
         lessVarStr="";
         for(var i=0,field;field=txtColors[i++];){
@@ -1202,6 +1206,17 @@
         console.log("lessVarStr:\n"+lessVarStr);
         console.log("lessFiles:\n"+lessFiles);
         console.log("jsFiles:\n"+jsFiles);
+        /*$.ajax({ 
+          url: '',
+          type: 'post',
+          data: {lessVarStr: lessVarStr,lessFiles: lessFiles,jsFiles: jsFiles},
+        })
+        .done(function(data) {
+          self.removeAttribute("disabled");
+        })
+        .fail(function() {
+          self.removeAttribute("disabled");
+        });*/
       }
 
       function init(){
