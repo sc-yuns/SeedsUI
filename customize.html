@@ -1176,15 +1176,15 @@
         for(var i=0,field;field=txtColors[i++];){
           lessVarStr+=$(field).data("property")+":"+field.value+";";
         }
-        console.log("lessVarStr："+lessVarStr);
         //获得所有定制文件名
         var filesStr="";
         for(var c=0,cbo;cbo=cboComponents[c++];){
           if(cbo.checked){
-            filesStr+=cbo.value+",";
+            filesStr+=","+cbo.value;
           }
         }
-        //console.log(filesStr);
+        filesStr=filesStr==""?"":filesStr.substr(1);
+        //console.log("filesStr:\n"+filesStr);
         var lessFiles="global.less,color.less,layout.less,mask.less,mbox.less,box.less,appearance.less";
         var jsFiles="";
         var filesJson=filesStr.toJson(",");
@@ -1198,8 +1198,10 @@
             lessFiles+=","+filename;
           }
         }
-        console.log("lessFiles："+lessFiles);
-        console.log("jsFiles："+jsFiles);
+        jsFiles=jsFiles==""?"":jsFiles.substr(1);
+        console.log("lessVarStr:\n"+lessVarStr);
+        console.log("lessFiles:\n"+lessFiles);
+        console.log("jsFiles:\n"+jsFiles);
       }
 
       function init(){
