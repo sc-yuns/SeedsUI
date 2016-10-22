@@ -189,7 +189,7 @@
                 <td>百度地图</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="baidumap.js" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>badge</td>
                 <td>徽章</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="badge.less" /></td>
@@ -198,7 +198,7 @@
                 <td>button</td>
                 <td>按钮</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="button.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>calendar</td>
                 <td>日历</td>
@@ -264,10 +264,15 @@
                 <td>滤镜(包含对比、去色、模糊、反转、饱合度等样式)</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="filter.less" /></td>
               </tr>
+              <!-- <tr>
+                <td>form</td>
+                <td>表单(包含数字框、开关、密码小眼睛、拖动条、清空框、安全等级、表单验证等)</td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,form.less,inputbox.less,inputcolor.less,range.less,progress.less,numbox.less,switch.less,tooltip.less,checkbox.less,safelvl.less" /></td>
+              </tr> -->
               <tr>
                 <td>form</td>
                 <td>表单(包含数字框、开关、密码小眼睛、拖动条、清空框、安全等级、表单验证等)</td>
-                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,form.less,inputbox.less,inputcolor.less,range.less,progress.less,numbox.less,switch.less,tooltip.less,checkbox.less,validate.less" /></td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,inputcolor.less,progress.less,tooltip.less,safelvl.less" /></td>
               </tr>
               <tr>
                 <td>checkbox和radio</td>
@@ -280,11 +285,11 @@
                 <td>仪表盘</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="gauge.js,gauge.less" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>grid</td>
                 <td>栅格(各种菜单九宫格)</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="grid.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>group</td>
                 <td>分组</td>
@@ -293,7 +298,7 @@
               <tr>
                 <td>icon</td>
                 <td>图标库</td>
-                <td align="center"><input type="checkbox" name="NID-CboComponent" value="i.less,icon.less" /></td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="icon.less" /></td>
               </tr>
               <tr>
                 <td>idvalidator</td>
@@ -340,11 +345,11 @@
                 <td>头部提示弹出框</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="prompt.js,prompt.less" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>photo</td>
                 <td>照片控件</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="photo.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>radius</td>
                 <td>圆角</td>
@@ -380,11 +385,11 @@
                 <td>摇一摇</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="shake.js" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>size</td>
                 <td>定义图标尺寸</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="size.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>slider</td>
                 <td>滑动容器</td>
@@ -410,11 +415,11 @@
                 <td>字符串工具箱(字符串转为json)</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="string.js" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>tabbar</td>
                 <td>页签</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="tabbar.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>table</td>
                 <td>表格</td>
@@ -430,11 +435,11 @@
                 <td>时间轴控件</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="timeline.less" /></td>
               </tr>
-              <tr>
+              <!-- <tr>
                 <td>titlebar</td>
                 <td>头部标题栏</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="titlebar.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>toast</td>
                 <td>底部提示弹出框</td>
@@ -1189,7 +1194,7 @@
         }
         filesStr=filesStr==""?"":filesStr.substr(1);
         //console.log("filesStr:\n"+filesStr);
-        var lessFiles="global.less,color.less,layout.less,mask.less,mbox.less,box.less,appearance.less";
+        var lessFiles="mbox.less,appearance.less,global.less,i.less,size.less,border.less,layout.less,box.less,color.less,titlebar.less,tabbar.less,button.less,grid.less,photo.less,badge.less,form.less,inputbox.less,numbox.less,checkbox.less,range.less,switch.less,mask.less";
         var jsFiles="";
         var filesJson=filesStr.toJson(",");
         //console.log(filesJson);
