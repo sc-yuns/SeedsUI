@@ -1192,6 +1192,7 @@
 
       function submit(e){
         var self=e.target;
+        self.value="编译中...";
         self.setAttribute("disabled","disabled");
         //获得less的变量字符串
         lessVarStr="";
@@ -1227,21 +1228,29 @@
         console.log("lessVarStr:\n"+lessVarStr);
         console.log("lessFiles:\n"+lessFiles);
         console.log("jsFiles:\n"+jsFiles);
-        document.getElementsByName("lessVarStr")[0].value=lessVarStr;
+        /*document.getElementsByName("lessVarStr")[0].value=lessVarStr;
         document.getElementsByName("lessFiles")[0].value=lessFiles;
-        document.getElementsByName("jsFiles")[0].value=jsFiles;
-        document.getElementById("ID-FormZipdownload").submit();
-        /*$.ajax({ 
-          url: 'sunwang0113.imwork.net:45863/less/download',
+        document.getElementsByName("jsFiles")[0].value=jsFiles;*/
+        //document.getElementById("ID-FormZipdownload").submit();
+        $.ajax({ 
+          url: 'http://192.168.10.162:8080/seedsuiPack/downloadState',
           type: 'post',
+          dataType: 'json',
           data: {lessVarStr: lessVarStr,lessFiles: lessFiles,jsFiles: jsFiles},
         })
         .done(function(data) {
-          self.removeAttribute("disabled");
+          console.log("data:\n"+data["info"]);
+          if(data.info=="success"){
+            self.removeAttribute("disabled");
+            self.value="编译并下载";
+            window.location.href='http://192.168.10.162:8080/seedsuiPack/zipdownloadFile?zipdownloadFile='+data.path;
+          }else{
+            alert("网络连接失败，请检查网络后重新下载！")
+          }
         })
         .fail(function() {
           self.removeAttribute("disabled");
-        });*/
+        });
       }
 
       function init(){
