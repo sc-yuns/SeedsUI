@@ -202,7 +202,7 @@
               <tr>
                 <td>calendar</td>
                 <td>日历</td>
-                <td align="center"><input type="checkbox" name="NID-CboComponent" value="calendar.js,calendar.less" /></td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="dateutil.js,calendar.js,calendar.less" /></td>
               </tr>
               <tr>
                 <td>card</td>
@@ -267,12 +267,12 @@
               <!-- <tr>
                 <td>form</td>
                 <td>表单(包含数字框、开关、密码小眼睛、拖动条、清空框、安全等级、表单验证等)</td>
-                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,form.less,inputbox.less,inputcolor.less,range.less,progress.less,numbox.less,switch.less,tooltip.less,checkbox.less,safelvl.less" /></td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,input.less,inputbox.less,inputcolor.less,range.less,progress.less,numbox.less,switch.less,tooltip.less,checkbox.less,safelvl.less" /></td>
               </tr> -->
               <tr>
                 <td>form</td>
                 <td>表单(包含数字框、开关、密码小眼睛、拖动条、清空框、安全等级、表单验证等)</td>
-                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,data.lang.js,form.js,toast.js,form.safelvl.js,form.controls.js,inputcolor.less,progress.less,tooltip.less,safelvl.less" /></td>
+                <td align="center"><input type="checkbox" name="NID-CboComponent" value="toast.js,prompt.js,data.lang.js,form.js,toast.less,prompt.less,inputcolor.less,progress.less" /></td>
               </tr>
               <tr>
                 <td>checkbox和radio</td>
@@ -349,12 +349,12 @@
                 <td>photo</td>
                 <td>照片控件</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="photo.less" /></td>
-              </tr> -->
+              </tr>
               <tr>
                 <td>radius</td>
                 <td>圆角</td>
                 <td align="center"><input type="checkbox" name="NID-CboComponent" value="radius.less" /></td>
-              </tr>
+              </tr> -->
               <tr>
                 <td>richeditor.js</td>
                 <td>富文本工具箱</td>
@@ -1136,6 +1136,14 @@
   <!-- Footer -->
   <footer class="bs-footer" role="contentinfo">CopyRight 烽火星空</footer>
 
+  <!-- 隐藏表单
+  ================================================== -->
+  <form action="http://www.seedsui.com/less/download" method="post" id="ID-FormZipdownload">
+    <input type="hidden" name="lessVarStr"/>
+    <input type="hidden" name="lessFiles"/>
+    <input type="hidden" name="jsFiles"/>
+  </form>
+
   <!-- JavaScript
 ================================================== -->
   <script src="javascripts/jquery.min.js"></script>
@@ -1169,7 +1177,12 @@
       //提交
       var lessVarStr="";
       var lessFiles="";
+      var basePreLessFiles="mbox.less,appearance.less,global.less,titlebar.less,tabbar.less,button.less,grid.less,photo.less,badge.less,input.less,inputbox.less,numbox.less,checkbox.less,range.less,switch.less,tooltip.less,safelvl.less,mask.less";
+      var baseSuffixLessFiles=",radius.less,i.less,size.less,border.less,layout.less,box.less,color.less";
+
       var jsFiles="";
+      var basePreJsFiles="form.safelvl.js,form.controls.js";
+
       //配色文本框
       var txtColors=document.getElementsByName("NID-TxtColor");
       //组件多选框
@@ -1194,8 +1207,8 @@
         }
         filesStr=filesStr==""?"":filesStr.substr(1);
         //console.log("filesStr:\n"+filesStr);
-        var lessFiles="mbox.less,appearance.less,global.less,i.less,size.less,border.less,layout.less,box.less,color.less,titlebar.less,tabbar.less,button.less,grid.less,photo.less,badge.less,form.less,inputbox.less,numbox.less,checkbox.less,range.less,switch.less,mask.less";
-        var jsFiles="";
+        lessFiles="";
+        jsFiles="";
         var filesJson=filesStr.toJson(",");
         //console.log(filesJson);
         for(var filename in filesJson){
@@ -1207,12 +1220,19 @@
             lessFiles+=","+filename;
           }
         }
-        jsFiles=jsFiles==""?"":jsFiles.substr(1);
+
+        lessFiles=basePreLessFiles+lessFiles+baseSuffixLessFiles;
+        jsFiles=basePreJsFiles+jsFiles;
+
         console.log("lessVarStr:\n"+lessVarStr);
         console.log("lessFiles:\n"+lessFiles);
         console.log("jsFiles:\n"+jsFiles);
+        document.getElementsByName("lessVarStr")[0].value=lessVarStr;
+        document.getElementsByName("lessFiles")[0].value=lessFiles;
+        document.getElementsByName("jsFiles")[0].value=jsFiles;
+        document.getElementById("ID-FormZipdownload").submit();
         /*$.ajax({ 
-          url: '',
+          url: 'sunwang0113.imwork.net:45863/less/download',
           type: 'post',
           data: {lessVarStr: lessVarStr,lessFiles: lessFiles,jsFiles: jsFiles},
         })
