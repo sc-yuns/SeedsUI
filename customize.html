@@ -1232,8 +1232,9 @@
         document.getElementsByName("lessFiles")[0].value=lessFiles;
         document.getElementsByName("jsFiles")[0].value=jsFiles;*/
         //document.getElementById("ID-FormZipdownload").submit();
+        var baseUrl="http://miap.cc:3410/seedsuiPack";
         $.ajax({ 
-          url: 'http://192.168.10.162:8080/seedsuiPack/downloadState',
+          url: baseUrl+'/downloadState',
           type: 'post',
           dataType: 'json',
           data: {lessVarStr: lessVarStr,lessFiles: lessFiles,jsFiles: jsFiles},
@@ -1243,7 +1244,7 @@
           if(data.info=="success"){
             self.removeAttribute("disabled");
             self.value="编译并下载";
-            window.location.href='http://192.168.10.162:8080/seedsuiPack/zipdownloadFile?zipdownloadFile='+data.path;
+            window.location.href=baseUrl+'/zipdownloadFile?zipdownloadFile='+data.path;
           }else{
             alert("网络连接失败，请检查网络后重新下载！")
           }
