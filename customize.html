@@ -1236,7 +1236,7 @@
         $.ajax({ 
           url: baseUrl+'/downloadState',
           type: 'post',
-          dataType: 'json',
+          dataType: 'jsonp',
           data: {lessVarStr: lessVarStr,lessFiles: lessFiles,jsFiles: jsFiles},
         })
         .done(function(data) {
