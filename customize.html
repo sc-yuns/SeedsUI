@@ -104,28 +104,10 @@
                   <a href="#titlebarColor">头部导航</a>
                 </li>
                 <li>
-                  <a href="#tabbarColor">页签导航</a>
-                </li>
-                <li>
                   <a href="#buttonColor">按钮颜色</a>
                 </li>
                 <li>
-                  <a href="#asideColor">侧边栏</a>
-                </li>
-                <li>
-                  <a href="#listColor">列表</a>
-                </li>
-                <li>
-                  <a href="#chatColor">聊天框</a>
-                </li>
-                <li>
                   <a href="#popColor">弹出框</a>
-                </li>
-                <li>
-                  <a href="#tableColor">表格</a>
-                </li>
-                <li>
-                  <a href="#progressColor">进度条</a>
                 </li>
                 <li>
                   <a href="#picColor">照片</a>
@@ -491,7 +473,7 @@
             <tbody>
               <tr>
                 <td>@primary-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@primary-bg" value="#18b2ed"/></td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@primary-bg" value="#20aeff"/></td>
                 <td>主色</td>
               </tr>
               <tr>
@@ -505,8 +487,8 @@
                 <td>主色上的文字色</td>
               </tr>
               <tr>
-                <td>@primary-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@primary-active-color" value="fade(@primary-color, 30%)"/></td>
+                <td>@primary-color-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@primary-color-active" value="fade(@primary-color, 30%)"/></td>
                 <td>主色上的文字点击色</td>
               </tr>
               <tr>
@@ -516,7 +498,7 @@
               </tr>
               <tr>
                 <td>@body-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@body-bg" value="#f4f4f4" /></td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@body-bg" value="#eaeaea" /></td>
                 <td>默认背景色</td>
               </tr>
               <tr>
@@ -525,24 +507,18 @@
                 <td>默认文字色</td>
               </tr>
               <tr>
-                <td>@border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@border" value="#e6e6e6" /></td>
-                <td>边框色</td>
-              </tr>
-              <tr>
                 <td>@label-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@label-color" value="#666" /></td>
-                <td>标签色</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@label-color" value="#9e9e9e" /></td>
+                <td>副标题</td>
               </tr>
               <tr>
                 <td>@placeholder-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@placeholder-color" value="#aaa" /></td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@placeholder-color" value="#ccc" /></td>
                 <td>占位符色</td>
               </tr>
-              
               <tr>
-                <td>@link-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@link-color" value="#18b2ed" /></td>
+                <td>@link</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@link" value="@primary-bg" /></td>
                 <td>链接色</td>
               </tr>
               <tr>
@@ -554,6 +530,11 @@
                 <td>@link-active-value</td>
                 <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@link-active-value" value="0.5" /></td>
                 <td>链接点击值</td>
+              </tr>
+              <tr>
+                <td>@border</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@border" value="#d1d1d1" /></td>
+                <td>边框色</td>
               </tr>
             </tbody>
           </table>
@@ -580,7 +561,7 @@
             </tbody>
           </table>
 
-          <h3 id="titlebarColor">头部导航</h3>
+          <h3 id="titlebarColor">导航条栏</h3>
           <table class="table table-bordered">
             <thead>
               <tr>
@@ -591,190 +572,85 @@
             </thead>
             <tbody>
               <tr>
-                <td>@titlebar-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-bg" value="#f9f9f9" /></td>
-                <td>头部导航背景色</td>
+                <td>@bar-bg</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-bg" value="#f9f9f9" /></td>
+                <td>背景色</td>
               </tr>
               <tr>
-                <td>@titlebar-h1-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-h1-color" value="#333" /></td>
-                <td>头部导航标题色</td>
+                <td>@bar-bg-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-bg-active" value="#f9f9f9" /></td>
+                <td>选中背景色</td>
               </tr>
               <tr>
-                <td>@titlebar-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-color" value="@primary-bg" /></td>
-                <td>头部导航文字色</td>
+                <td>@bar-border</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-border" value="@border" /></td>
+                <td>边框色</td>
               </tr>
               <tr>
-                <td>@titlebar-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-active-color" value="fade(@titlebar-color,50%)" /></td>
-                <td>头部导航文字点击色</td>
+                <td>@bar-border-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-border-active" value="@primary-bg" /></td>
+                <td>选中边框色</td>
               </tr>
               <tr>
-                <td>@titlebar-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-border" value="@border" /></td>
-                <td>头部导航边框色</td>
+                <td>@bar-link</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-link" value="@primary-bg" /></td>
+                <td>链接颜色</td>
               </tr>
               <tr>
-                <td>@titlebar-reverse-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-reverse-bg" value="@primary-bg" /></td>
-                <td>头部导航背景反转色</td>
+                <td>@bar-link-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-link-active" value="fade(@bar-link,50%)" /></td>
+                <td>点击链接颜色</td>
               </tr>
               <tr>
-                <td>@titlebar-reverse-h1-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-reverse-h1-color" value="white" /></td>
-                <td>头部导航标题反转色</td>
+                <td>@bar-color</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-color" value="#333" /></td>
+                <td>文字颜色</td>
               </tr>
               <tr>
-                <td>@titlebar-reverse-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-reverse-color" value="white" /></td>
-                <td>头部导航文字反转色</td>
-              </tr>
-              <tr>
-                <td>@titlebar-reverse-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-reverse-active-color" value="fade(@titlebar-reverse-color,50%)" /></td>
-                <td>头部导航链接点击反转色</td>
-              </tr>
-              <tr>
-                <td>@titlebar-reverse-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@titlebar-reverse-border" value="@primary-bg" /></td>
-                <td>头部导航边框反转色</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3 id="tabbarColor">页签导航</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@tabbar-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-bg" value="#f8f8f8" /></td>
-                <td>页签栏背景色</td>
-              </tr>
-              <tr>
-                <td>@tabbar-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-border" value="@border" /></td>
-                <td>页签栏边框色</td>
-              </tr>
-              <tr>
-                <td>@tabbar-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-color" value="#888" /></td>
-                <td>页签栏文字色</td>
-              </tr>
-              <tr>
-                <td>@tabbar-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-active-color" value="@primary-bg" /></td>
-                <td>页签栏文字点击色</td>
-              </tr>
-              <tr>
-                <td>@tabbar-active-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-active-bg" value="#f8f8f8" /></td>
-                <td>页签栏文字点击背景色</td>
-              </tr>
-              <tr>
-                <td>@tabbar-active-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-active-border" value="@primary-bg" /></td>
-                <td>页签栏文字点击边框色</td>
+                <td>@bar-color-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-color-active" value="@primary-bg" /></td>
+                <td>选中文字颜色</td>
               </tr>
 
               <tr>
-                <td>@tabbar-reverse-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-bg" value="@primary-bg" /></td>
-                <td>页签栏反转背景色</td>
+                <td>@bar-reverse-bg</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-bg" value="@primary-bg" /></td>
+                <td>背景色</td>
               </tr>
               <tr>
-                <td>@tabbar-reverse-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-border" value="white" /></td>
-                <td>页签栏反转边框色</td>
+                <td>@bar-reverse-bg-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-bg-active" value="@primary-bg" /></td>
+                <td>选中背景色</td>
               </tr>
               <tr>
-                <td>@tabbar-reverse-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-color" value="white" /></td>
-                <td>页签栏反转文字色</td>
+                <td>@bar-reverse-border</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-border" value="@primary-bg" /></td>
+                <td>边框色</td>
               </tr>
               <tr>
-                <td>@tabbar-reverse-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-active-color" value="@primary-bg" /></td>
-                <td>页签栏反转文字点击色</td>
+                <td>@bar-reverse-border-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-border-active" value="white" /></td>
+                <td>选中边框色</td>
               </tr>
               <tr>
-                <td>@tabbar-reverse-active-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-active-bg" value="white" /></td>
-                <td>页签栏反转文字点击背景色</td>
+                <td>@bar-reverse-link</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-link" value="white" /></td>
+                <td>链接颜色</td>
               </tr>
               <tr>
-                <td>@tabbar-reverse-active-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@tabbar-reverse-active-border" value="white" /></td>
-                <td>页签栏反转文字点击边框色</td>
-              </tr>
-
-              <tr>
-                <td>@menubar-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-bg" value="#f8f8f8" /></td>
-                <td>底部栏背景色</td>
+                <td>@bar-reverse-link-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-link-active" value="fade(@bar-reverse-link,50%)" /></td>
+                <td>点击链接颜色</td>
               </tr>
               <tr>
-                <td>@menubar-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-border" value="@border" /></td>
-                <td>底部栏边框色</td>
+                <td>@bar-reverse-color</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-color" value="white" /></td>
+                <td>文字颜色</td>
               </tr>
               <tr>
-                <td>@menubar-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-color" value="#888" /></td>
-                <td>底部栏文字色</td>
-              </tr>
-              <tr>
-                <td>@menubar-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-active-color" value="@primary-bg" /></td>
-                <td>底部栏文字点击色</td>
-              </tr>
-              <tr>
-                <td>@menubar-active-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-active-bg" value="#f8f8f8" /></td>
-                <td>底部栏文字点击背景色</td>
-              </tr>
-              <tr>
-                <td>@menubar-active-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-active-border" value="@border" /></td>
-                <td>底部栏点击边框色</td>
-              </tr>
-
-              <tr>
-                <td>@menubar-reverse-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-bg" value="@primary-bg" /></td>
-                <td>底部栏反转背景色</td>
-              </tr>
-              <tr>
-                <td>@menubar-reverse-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-border" value="@primary-bg" /></td>
-                <td>底部栏反转边框色</td>
-              </tr>
-              <tr>
-                <td>@menubar-reverse-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-color" value="fade(white,60%)" /></td>
-                <td>底部栏反转文字色</td>
-              </tr>
-              <tr>
-                <td>@menubar-reverse-active-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-active-color" value="white" /></td>
-                <td>底部栏反转文字点击色</td>
-              </tr>
-              <tr>
-                <td>@menubar-reverse-active-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-active-bg" value="@primary-bg" /></td>
-                <td>底部栏反转文字点击背景色</td>
-              </tr>
-              <tr>
-                <td>@menubar-reverse-active-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@menubar-reverse-active-border" value="@primary-bg" /></td>
-                <td>底部栏反转点击边框色</td>
+                <td>@bar-reverse-color-active</td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@bar-reverse-color-active" value="white" /></td>
+                <td>选中文字颜色</td>
               </tr>
             </tbody>
           </table>
@@ -817,70 +693,6 @@
             </tbody>
           </table>
 
-          <h3 id="asideColor">侧边栏</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@aside-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@aside-bg" value="@body-bg"/></td>
-                <td>侧边栏背景色</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3 id="listColor">列表</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@list-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@list-bg" value="white" /></td>
-                <td>列表背景色</td>
-              </tr>
-              <tr>
-                <td>@list-active-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@list-active-bg" value="#f4f4f4" /></td>
-                <td>列表背景点击色</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3 id="chatColor">聊天框</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@chat-odd-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@chat-odd-bg" value="#ddd" /></td>
-                <td>聊天奇行背景色</td>
-              </tr>
-              <tr>
-                <td>@chat-even-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@chat-even-bg" value="#b8daff" /></td>
-                <td>聊天偶行背景色</td>
-              </tr>
-            </tbody>
-          </table>
-
           <h3 id="popColor">弹出框</h3>
           <table class="table table-bordered">
             <thead>
@@ -895,47 +707,6 @@
                 <td>@toast-bg</td>
                 <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@toast-bg" value="rgba(0,0,0,.6)" /></td>
                 <td>小弹框背景色</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3 id="tableColor">表格</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@table-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@table-color" value="#888" /></td>
-                <td>表格文字色</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3 id="progressColor">进度条</h3>
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>变量名称</th>
-                <th>值</th>
-                <th>描述</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>@progress-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@progress-bg" value="#ccc" /></td>
-                <td>进度条背景色</td>
-              </tr>
-              <tr>
-                <td>@progress-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@progress-color" value="@primary-bg" /></td>
-                <td>进度条文字色</td>
               </tr>
             </tbody>
           </table>
@@ -957,7 +728,7 @@
               </tr>
               <tr>
                 <td>@photo-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@photo-color" value="#ccc" /></td>
+                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@photo-color" value="@placeholder-color" /></td>
                 <td>照片文字色</td>
               </tr>
             </tbody>
@@ -973,31 +744,6 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>@calendar-weeks-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-weeks-color" value="#aaa" /></td>
-                <td>周颜色</td>
-              </tr>
-              <tr>
-                <td>@calendar-arrow-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-arrow-color" value="@body-color" /></td>
-                <td>箭头颜色</td>
-              </tr>
-              <tr>
-                <td>@calendar-current-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-current-color" value="@body-color" /></td>
-                <td>活动日期颜色</td>
-              </tr>
-              <tr>
-                <td>@calendar-notcurrent-color</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-notcurrent-color" value="#ccc" /></td>
-                <td>非活动日期颜色</td>
-              </tr>
-              <tr>
-                <td>@calendar-today-border</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-today-border" value="#b2b2b2" /></td>
-                <td>今天边框颜色</td>
-              </tr>
               <tr>
                 <td>@calendar-active-color</td>
                 <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@calendar-active-color" value="@primary-color" /></td>
@@ -1055,11 +801,6 @@
                 <td>@warn-bg</td>
                 <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@warn-bg" value="#f4984e" /></td>
                 <td>警告背景色</td>
-              </tr>
-              <tr>
-                <td>@sliver-bg</td>
-                <td><input type="text" class="form-control" name="NID-TxtColor" data-property="@sliver-bg" value="#ececec" /></td>
-                <td>条形标题背景色</td>
               </tr>
               <tr>
                 <td>@tip-bg</td>
